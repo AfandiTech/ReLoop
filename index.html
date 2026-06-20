@@ -19,10 +19,10 @@
         <nav class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <h1 class="text-2xl font-black italic tracking-tighter">RE<span class="text-emerald-400">LOOP</span></h1>
             <div class="space-x-8 font-medium hidden md:block">
-                <a href="#about" class="hover:text-emerald-400 transition">About</a>
-                <a href="#products" class="hover:text-emerald-400 transition">Products</a>
-                <a href="#services" class="hover:text-emerald-400 transition">Services</a>
-                <a href="#investor-roadmap" class="bg-emerald-600 px-5 py-2 rounded-full hover:bg-emerald-500 transition">Invest</a>
+                <a href="#about" class="hover:text-emerald-400">About</a>
+                <a href="#products" class="hover:text-emerald-400">Products</a>
+                <a href="#services" class="hover:text-emerald-400">Services</a>
+                <a href="#investor-roadmap" class="bg-emerald-600 px-5 py-2 rounded-full hover:bg-emerald-500">Invest</a>
             </div>
         </nav>
     </header>
@@ -58,32 +58,43 @@
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-4xl font-extrabold mb-16">Our Products</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl border p-8 hover:shadow-2xl transition-all transform hover:-translate-y-3"><img src="images/pc.jpg" class="w-full h-48 object-cover mb-6 rounded-xl"><h4 class="text-xl font-bold">Laptops & Workstations</h4></div>
-                <div class="bg-white rounded-3xl border p-8 hover:shadow-2xl transition-all transform hover:-translate-y-3"><img src="images/mobilephones.jpeg" class="w-full h-48 object-cover mb-6 rounded-xl"><h4 class="text-xl font-bold">Smartphones</h4></div>
-                <div class="bg-white rounded-3xl border p-8 hover:shadow-2xl transition-all transform hover:-translate-y-3"><img src="images/tabblet.jpeg" class="w-full h-48 object-cover mb-6 rounded-xl"><h4 class="text-xl font-bold">Tablets & Gadgets</h4></div>
+                <div class="bg-white rounded-3xl border overflow-hidden hover:shadow-2xl transition"><img src="images/pc.jpg" class="w-full h-48 object-cover"><div class="p-8"><h4 class="text-xl font-bold">Laptops & Workstations</h4></div></div>
+                <div class="bg-white rounded-3xl border overflow-hidden hover:shadow-2xl transition"><img src="images/mobilephones.jpeg" class="w-full h-48 object-cover"><div class="p-8"><h4 class="text-xl font-bold">Smartphones</h4></div></div>
+                <div class="bg-white rounded-3xl border overflow-hidden hover:shadow-2xl transition"><img src="images/tabblet.jpeg" class="w-full h-48 object-cover"><div class="p-8"><h4 class="text-xl font-bold">Tablets & Gadgets</h4></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white scroll-reveal">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold mb-16">Core Services</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="p-6 hover:bg-emerald-50 rounded-2xl"><i class="fa-solid fa-microchip text-3xl text-emerald-600 mb-4"></i><h4 class="font-bold">Refurbishment</h4></div>
+                <div class="p-6 hover:bg-emerald-50 rounded-2xl"><i class="fa-solid fa-truck text-3xl text-emerald-600 mb-4"></i><h4 class="font-bold">Logistics</h4></div>
+                <div class="p-6 hover:bg-emerald-50 rounded-2xl"><i class="fa-solid fa-lock text-3xl text-emerald-600 mb-4"></i><h4 class="font-bold">Data Security</h4></div>
+                <div class="p-6 hover:bg-emerald-50 rounded-2xl"><i class="fa-solid fa-globe text-3xl text-emerald-600 mb-4"></i><h4 class="font-bold">Distribution</h4></div>
             </div>
         </div>
     </section>
 
     <section id="investor-roadmap" class="py-24 bg-slate-900 text-white scroll-reveal">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4">Growth Strategy</h2>
             <h3 class="text-4xl font-extrabold mb-12">Post-Funding Equity Structure</h3>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-slate-800 p-10 rounded-3xl border border-slate-700">
-                    <h4 class="text-xl font-bold mb-4">Founders</h4>
+                    <h4 class="text-xl font-bold mb-4 text-slate-300">Founders</h4>
                     <span class="text-6xl font-black text-emerald-400">70%</span>
                 </div>
                 <div class="bg-emerald-600 p-10 rounded-3xl shadow-2xl">
-                    <h4 class="text-xl font-bold mb-4">New Investors</h4>
+                    <h4 class="text-xl font-bold mb-4 text-white">New Investors</h4>
                     <span class="text-6xl font-black text-white">30%</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-50 py-16 text-center">
-        <p class="text-slate-500 text-sm">&copy; 2026 Mahmoud Afandi Technology FZCO. All rights reserved.</p>
+    <footer class="bg-slate-900 text-white py-16 text-center">
+        <p class="text-slate-400 text-sm">&copy; 2026 Mahmoud Afandi Technology FZCO. All rights reserved.</p>
     </footer>
 
     <script>
