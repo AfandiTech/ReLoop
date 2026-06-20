@@ -11,151 +11,82 @@
         .animate-fade-in-up { opacity: 1; transform: translateY(0); }
         .hero-zoom { animation: zoomEffect 20s infinite alternate; }
         @keyframes zoomEffect { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-50 text-slate-900 selection:bg-emerald-200">
 
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+    <header class="fixed w-full z-50 transition-all duration-300 border-b border-white/10 bg-white/80 backdrop-blur-lg">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <div class="h-10 w-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white"><i class="fa-solid fa-recycle"></i></div>
-                <span class="text-xl font-black tracking-tight">ReLoop</span>
+                <div class="h-10 w-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-600/20"><i class="fa-solid fa-recycle"></i></div>
+                <span class="text-2xl font-black tracking-tighter">ReLoop</span>
             </div>
-            <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
-                <a href="#about" class="hover:text-emerald-600">About</a>
-                <a href="#products" class="hover:text-emerald-600">Products</a>
-                <a href="#services" class="hover:text-emerald-600">Services</a>
-                <a href="#certifications" class="hover:text-emerald-600">Certifications</a>
-                <a href="#goals" class="hover:text-emerald-600">Future Goals</a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+                <a href="#about" class="hover:text-emerald-600 transition">About</a>
+                <a href="#products" class="hover:text-emerald-600 transition">Products</a>
+                <a href="#certifications" class="hover:text-emerald-600 transition">Certifications</a>
+                <a href="#investor-relations" class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-emerald-600 transition">Investor Portal</a>
             </div>
         </nav>
     </header>
 
-    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000" class="hero-zoom w-full h-full object-cover"><div class="absolute inset-0 bg-slate-900/70"></div></div>
-        <div class="relative z-10 text-center text-white px-6">
-            <h1 class="text-6xl font-extrabold mb-6">Giving Technology <span class="text-emerald-400">A Second Life</span></h1>
-            <p class="text-xl text-slate-200 mb-10">Mahmoud Afandi Technology FZCO - 2026</p>
-            <a href="#products" class="bg-emerald-600 px-10 py-4 rounded-full font-bold hover:bg-emerald-500">Explore Products</a>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000" class="hero-zoom w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-50"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 mt-20">
+            <h1 class="text-7xl md:text-8xl font-black text-white mb-6 tracking-tight">Tech, Renewed.</h1>
+            <p class="text-xl text-emerald-400 font-medium tracking-widest uppercase mb-10">Mahmoud Afandi Technology FZCO - 2026</p>
+            <a href="#products" class="bg-emerald-600 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-emerald-500 shadow-xl shadow-emerald-900/50 transition transform hover:scale-105">View Our Inventory</a>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-white scroll-reveal">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-            <div><h2 class="text-emerald-600 font-bold uppercase text-sm mb-2">Who We Are</h2><h3 class="text-4xl font-extrabold mb-6">Innovation from Dubai Silicon Oasis</h3><p class="text-slate-600">ReLoop by AfandiTech specializes in the professional procurement, refurbishment, and distribution of high-quality electronics.</p></div>
-            <div id="vision" class="bg-slate-900 p-10 rounded-3xl text-white"><h2 class="text-emerald-400 font-bold uppercase text-sm mb-2">Our Vision</h2><h3 class="text-3xl font-extrabold mb-6">Redefining Tech Lifecycles</h3><p class="text-slate-400">To lead the circular economy by providing accessible, reliable, and sustainable technological solutions.</p></div>
-        </div>
-    </section>
-
-    <section id="products" class="py-20 bg-slate-50 scroll-reveal">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold mb-16">Our Products</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl border p-8"><img src="public/images/pc.jpg" class="h-40 mx-auto object-contain mb-4"><h4 class="text-xl font-bold">Laptops</h4></div>
-                <div class="bg-white rounded-3xl border p-8"><img src="public/images/mobilephones.jpeg" class="h-40 mx-auto object-contain mb-4"><h4 class="text-xl font-bold">Smartphones</h4></div>
-                <div class="bg-white rounded-3xl border p-8"><img src="public/images/tabblet.jpeg" class="h-40 mx-auto object-contain mb-4"><h4 class="text-xl font-bold">Tablets</h4></div>
+    <!-- About -->
+    <section id="about" class="py-24 bg-white scroll-reveal">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Who We Are</span>
+                <h2 class="text-5xl font-black mt-3 mb-6 leading-tight">Innovation from <br>Dubai Silicon Oasis</h2>
+                <p class="text-lg text-slate-600 leading-relaxed">ReLoop by AfandiTech specializes in the professional procurement, refurbishment, and distribution of high-quality electronics with a focus on long-term sustainability.</p>
+            </div>
+            <div class="bg-slate-900 p-12 rounded-[2rem] text-white shadow-2xl">
+                <h3 class="text-emerald-400 font-bold uppercase text-sm mb-4">Our Vision</h3>
+                <p class="text-3xl font-extrabold leading-snug">Redefining the global tech lifecycle through circular economy excellence.</p>
             </div>
         </div>
     </section>
 
-    <section id="certifications" class="py-20 bg-white scroll-reveal">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-2">Our Standards</h2>
-            <h3 class="text-4xl font-extrabold">Targeted Global Certifications</h3>
-            <p class="mt-4 text-slate-600 max-w-2xl mx-auto">We are committed to operating under the highest international standards for environmental safety, data security, and quality refurbishment.</p>
-        </div>
-        
-        <!-- Changed grid to flex with justify-center -->
-        <div class="flex flex-wrap justify-center gap-6">
-            <div class="w-full sm:w-48 p-6 bg-slate-50 rounded-2xl border hover:border-emerald-500 transition text-center">
-                <i class="fa-solid fa-shield-halved text-3xl text-emerald-600 mb-4"></i>
-                <h4 class="font-bold">R2v3</h4>
-                <p class="text-xs text-slate-500 mt-2">Responsible Recycling Standard</p>
-            </div>
-            
-            <div class="w-full sm:w-48 p-6 bg-slate-50 rounded-2xl border hover:border-emerald-500 transition text-center">
-                <i class="fa-solid fa-leaf text-3xl text-emerald-600 mb-4"></i>
-                <h4 class="font-bold">ISO 14001</h4>
-                <p class="text-xs text-slate-500 mt-2">Environmental Management</p>
-            </div>
-            
-            <div class="w-full sm:w-48 p-6 bg-slate-50 rounded-2xl border hover:border-emerald-500 transition text-center">
-                <i class="fa-solid fa-lock text-3xl text-emerald-600 mb-4"></i>
-                <h4 class="font-bold">ISO 27001</h4>
-                <p class="text-xs text-slate-500 mt-2">Data Security Management</p>
-            </div>
-            
-            <div class="w-full sm:w-48 p-6 bg-slate-50 rounded-2xl border hover:border-emerald-500 transition text-center">
-                <i class="fa-solid fa-file-circle-minus text-3xl text-emerald-600 mb-4"></i>
-                <h4 class="font-bold">NAID AAA</h4>
-                <p class="text-xs text-slate-500 mt-2">Data Destruction Security</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="goals" class="py-24 bg-slate-900 text-white scroll-reveal">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h3 class="text-4xl font-extrabold mb-12">Equity Structure</h3>
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-slate-800 p-10 rounded-3xl"><h4 class="text-xl font-bold mb-4">Founders</h4><span class="text-6xl font-black text-emerald-400">70%</span></div>
-                <div class="bg-emerald-600 p-10 rounded-3xl"><h4 class="text-xl font-bold mb-4">New Investors</h4><span class="text-6xl font-black text-white">30%</span></div>
-            </div>
-        </div>
-    </section>
-<section id="investor-relations" class="py-24 bg-slate-950 text-slate-100">
-    <div class="max-w-7xl mx-auto px-6">
-        <!-- Header & Thesis -->
-        <div class="mb-20 border-b border-slate-800 pb-12">
-            <h2 class="text-emerald-500 font-bold tracking-widest uppercase text-sm mb-4">Strategic Equity Offering</h2>
-            <h3 class="text-5xl font-extrabold mb-8">Capitalizing on Circular Infrastructure</h3>
-            <p class="text-xl text-slate-400 max-w-3xl leading-relaxed">
-                We are seeking a lead equity partner to secure a 30% stake in our operation. 
-                This capital will directly fuel our expansion into [Target Market/Region], 
-                scaling our high-margin refurbishment and data destruction workflows.
-            </p>
-        </div>
-
-        <!-- Pillars of Value -->
-        <div class="grid md:grid-cols-3 gap-10 mb-20">
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-                <div class="text-emerald-500 text-2xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
-                <h4 class="text-xl font-bold mb-3">Market Traction</h4>
-                <p class="text-slate-400 text-sm leading-relaxed">Year-over-year revenue growth of [X]%. Proven demand across key enterprise verticals with a robust pipeline of recurring contracts.</p>
-            </div>
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-                <div class="text-emerald-500 text-2xl mb-4"><i class="fa-solid fa-industry"></i></div>
-                <h4 class="text-xl font-bold mb-3">Operational Scale</h4>
-                <p class="text-slate-400 text-sm leading-relaxed">Proprietary refurbishment workflows achieving [X]% efficiency gains over industry benchmarks. 100% compliant, audit-ready facilities.</p>
-            </div>
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-                <div class="text-emerald-500 text-2xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                <h4 class="text-xl font-bold mb-3">Risk Mitigation</h4>
-                <p class="text-slate-400 text-sm leading-relaxed">Diversified revenue streams, hard-asset collateralization, and industry-leading certifications (R2v3, ISO 27001, NAID AAA).</p>
-            </div>
-        </div>
-
-       
-    </div>
-</section>
-</br>
-    <footer class="bg-slate-950 text-slate-400 py-16">
+    <!-- Investor Section (Refined) -->
+    <section id="investor-relations" class="py-24 bg-slate-950 text-slate-100 scroll-reveal">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-12 mb-12">
-                <div><span class="text-white text-xl font-black italic">ReLoop</span><p class="mt-4 text-sm">Giving technology a second life.</p></div>
-                <div><h5 class="text-white font-bold mb-4">Navigate</h5><ul class="space-y-2 text-sm"><li><a href="#about">About</a></li><li><a href="#products">Products</a></li></ul></div>
-                <div class="col-span-2 text-right">
-                    <h5 class="text-white font-bold mb-4">Our Partners</h5>
-                    <div class="flex justify-end gap-6 flex-wrap"><img src="public/images/tabby.png" class="h-8"><img src="public/images/Fedex.png" class="h-8"><img src="public/images/emx.png" class="h-8"><img src="public/images/jeebly.png" class="h-8"></div>
+            <div class="text-center mb-20">
+                <h2 class="text-emerald-500 font-bold uppercase tracking-widest text-sm mb-4">Strategic Equity Offering</h2>
+                <h3 class="text-5xl font-extrabold">Capitalizing on Circular Infrastructure</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Cards -->
+                <div class="group bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/50 transition duration-500">
+                    <div class="text-emerald-500 text-3xl mb-6"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Market Traction</h4>
+                    <p class="text-slate-400 text-sm">Aggressive year-over-year growth with a proven pipeline of recurring enterprise contracts.</p>
+                </div>
+                <div class="group bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/50 transition duration-500">
+                    <div class="text-emerald-500 text-3xl mb-6"><i class="fa-solid fa-industry"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Operational Scale</h4>
+                    <p class="text-slate-400 text-sm">Proprietary refurbishment workflows achieving industry-leading efficiency and output quality.</p>
+                </div>
+                <div class="group bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/50 transition duration-500">
+                    <div class="text-emerald-500 text-3xl mb-6"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Risk Mitigation</h4>
+                    <p class="text-slate-400 text-sm">Hard-asset collateralization and full certification compliance (R2v3, ISO 27001, NAID AAA).</p>
                 </div>
             </div>
-            <div class="flex justify-between items-center text-xs">
-                <p>&copy; 2026 Mahmoud Afandi Technology FZCO.</p>
-                <a href="https://wa.me/971521329732" class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold">Contact Us</a>
-            </div>
         </div>
-    </footer>
+    </section>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
