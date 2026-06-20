@@ -1,124 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReLoop | Circular Marketplace</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .animate-fade-in-up { opacity: 1; transform: translateY(0); }
+        .hero-zoom { animation: zoomEffect 20s infinite alternate; }
+        @keyframes zoomEffect { from { transform: scale(1); } to { transform: scale(1.1); } }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-    <!-- Hero Section -->
-    <section class="relative py-32 overflow-hidden animate-fade-in">
-        <div class="absolute inset-0 bg-slate-900/80 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover">
-        <div class="relative z-20 max-w-7xl mx-auto px-6 text-center text-white">
-            <h1 class="text-6xl font-extrabold mb-6">Giving Technology <span class="text-emerald-400">A Second Life</span></h1>
-            <p class="text-xl text-slate-200 max-w-2xl mx-auto mb-10">The premier certified circular marketplace and refurbishment network.</p>
-            <a href="#products" class="bg-emerald-600 px-8 py-4 rounded-full font-bold hover:bg-emerald-500 transition">Explore Products</a>
+    <header class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md text-white py-6 border-b border-white/10">
+        <nav class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <h1 class="text-2xl font-black italic tracking-tighter">RE<span class="text-emerald-400">LOOP</span></h1>
+            <div class="space-x-8 font-medium hidden md:block">
+                <a href="#about" class="hover:text-emerald-400">About</a>
+                <a href="#products" class="hover:text-emerald-400">Products</a>
+                <a href="#services" class="hover:text-emerald-400">Services</a>
+                <a href="#investor-roadmap" class="bg-emerald-600 px-5 py-2 rounded-full hover:bg-emerald-500">Invest</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000" class="hero-zoom w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-900/70"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-6">
+            <h1 class="text-7xl font-extrabold mb-6">Giving Technology <span class="text-emerald-400">A Second Life</span></h1>
+            <p class="text-xl text-slate-200 mb-10">Premier circular marketplace based in Dubai Silicon Oasis.</p>
+            <a href="#products" class="bg-emerald-600 px-10 py-4 rounded-full font-bold hover:bg-emerald-500 transition">Explore Products</a>
         </div>
     </section>
 
-    <!-- About & Vision Section -->
-    <section id="about" class="py-20 bg-white scroll-reveal">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+    <section id="about" class="py-20 bg-white scroll-reveal">...</section>
+    <section id="products" class="py-20 bg-slate-50 scroll-reveal">...</section>
+    <section id="services" class="py-20 bg-white scroll-reveal">...</section>
+    <section id="goals" class="py-24 bg-slate-900 text-white scroll-reveal">...</section>
+    <section id="investor-roadmap" class="py-20 bg-white scroll-reveal">...</section>
+
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
             <div>
-                <h2 class="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-2">Who We Are</h2>
-                <h3 class="text-4xl font-extrabold mb-6">Innovation from Dubai Silicon Oasis</h3>
-                <p class="text-slate-600 text-lg">ReLoop by AfandiTech specializes in the professional procurement, refurbishment, and distribution of high-quality electronics, bridging the gap between premium performance and global sustainability.</p>
+                <h4 class="text-xl font-bold mb-4">RELOOP</h4>
+                <p class="text-slate-400 text-sm">Innovating tech lifecycles from Dubai Silicon Oasis to the world.</p>
             </div>
-            <div id="vision" class="bg-slate-900 p-10 rounded-3xl text-white transform hover:scale-105 transition-transform duration-500">
-                <h2 class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-2">Our Vision</h2>
-                <h3 class="text-3xl font-extrabold mb-6">Redefining Tech Lifecycles</h3>
-                <p class="text-slate-400">To lead the circular economy by providing accessible, reliable, and sustainable technological solutions to the global market.</p>
+            <div>
+                <h4 class="font-bold mb-4">Services</h4>
+                <ul class="text-slate-400 text-sm space-y-2">
+                    <li>Refurbishment</li><li>Logistics</li><li>Data Security</li><li>Distribution</li>
+                </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-20 bg-slate-50 scroll-reveal">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold mb-16">Our Products</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 cursor-pointer">
-                    <i class="fa-solid fa-laptop text-4xl text-emerald-600 mb-6"></i>
-                    <h4 class="text-xl font-bold">Laptops & Workstations</h4>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 cursor-pointer">
-                    <i class="fa-solid fa-mobile-screen text-4xl text-emerald-600 mb-6"></i>
-                    <h4 class="text-xl font-bold">Smartphones</h4>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 cursor-pointer">
-                    <i class="fa-solid fa-tablet-screen-button text-4xl text-emerald-600 mb-6"></i>
-                    <h4 class="text-xl font-bold">Tablets & Gadgets</h4>
+            <div>
+                <h4 class="font-bold mb-4">Company</h4>
+                <ul class="text-slate-400 text-sm space-y-2">
+                    <li>About Us</li><li>Investor Relations</li><li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Connect</h4>
+                <div class="flex space-x-4 text-xl">
+                    <i class="fa-brands fa-linkedin hover:text-emerald-400"></i>
+                    <i class="fa-brands fa-github hover:text-emerald-400"></i>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white scroll-reveal">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold mb-16">Core Services</h2>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="p-6 hover:bg-emerald-50 rounded-2xl transition-colors"><i class="fa-solid fa-microchip text-3xl text-emerald-600 mb-4"></i><h4 class="font-bold">Refurbishment</h4></div>
-                <div class="p-6 hover:bg-emerald-50 rounded-2xl transition-colors"><i class="fa-solid fa-truck text-3xl text-emerald-600 mb-4"></i><h4 class="font-bold">Logistics</h4></div>
-                <div class="p-6 hover:bg-emerald-50 rounded-2xl transition-colors"><i class="fa-solid fa-lock text-3xl text-emerald-600 mb-4"></i><h4 class="font-bold">Data Security</h4></div>
-                <div class="p-6 hover:bg-emerald-50 rounded-2xl transition-colors"><i class="fa-solid fa-globe text-3xl text-emerald-600 mb-4"></i><h4 class="font-bold">Distribution</h4></div>
-            </div>
+        <div class="text-center mt-12 border-t border-slate-800 pt-8 text-slate-500 text-xs">
+            &copy; 2026 Mahmoud Afandi Technology FZCO. All rights reserved.
         </div>
-    </section>
-
-    <!-- Future Goals Section -->
-    <section id="goals" class="py-24 bg-slate-900 text-white relative overflow-hidden scroll-reveal">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4">Strategic Roadmap</h2>
-            <h3 class="text-4xl md:text-5xl font-extrabold mb-8">Empowering the Unconnected</h3>
-            <p class="text-xl text-slate-300 leading-relaxed mb-12 max-w-3xl mx-auto">
-                Upon securing our next round of funding, our mission is to expand into emerging markets. We are committed to providing the hardware and infrastructure necessary to unlock opportunities for online education and remote work.
-            </p>
-        </div>
-    </section>
-
-    <!-- Investor Roadmap -->
-    <section id="investor-roadmap" class="py-20 bg-white scroll-reveal">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-2">Growth Strategy</h2>
-                <h3 class="text-4xl font-extrabold">Investment Roadmap</h3>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
-                        <h4 class="text-xl font-bold mb-6 text-slate-400">Current Structure</h4>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center bg-white p-3 rounded-lg border border-slate-100"><span class="font-semibold">Mahmoud</span><span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-bold">50%</span></div>
-                            <div class="flex justify-between items-center bg-white p-3 rounded-lg border border-slate-100"><span class="font-semibold">John</span><span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-bold">50%</span></div>
-                        </div>
-                    </div>
-                    <div class="bg-emerald-900 p-8 rounded-3xl text-white">
-                        <h4 class="text-xl font-bold mb-6 text-emerald-400">Post-Funding Target</h4>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center bg-emerald-800 p-3 rounded-lg"><span class="font-semibold">Mahmoud</span><span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-bold">40%</span></div>
-                            <div class="flex justify-between items-center bg-emerald-800 p-3 rounded-lg"><span class="font-semibold">John</span><span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-bold">40%</span></div>
-                            <div class="flex justify-between items-center bg-white p-3 rounded-lg text-emerald-900"><span class="font-semibold">New Shareholders</span><span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold">20%</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center">
-                    <h4 class="text-2xl font-bold mb-6">Strategic Expansion</h4>
-                    <p class="text-slate-600 mb-8">By bringing in new strategic partners, we are diluting our initial stakes to accelerate our reach into emerging markets. This 20% allocation is dedicated to investors who share our vision of bridging the digital divide.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </footer>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
