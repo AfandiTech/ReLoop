@@ -4,882 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReLoop Electronics | Circular Tech & Sustainable Electronics Hub</title>
-    
-    <!-- External Tailwind CSS, FontAwesome & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                    },
-                    colors: {
-                        githubDark: '#0d1117',
-                        githubCard: '#161b22',
-                        githubBorder: '#30363d',
-                        brandGreen: '#10b981',
-                        brandGreenHover: '#059669',
-                    }
-                }
-            }
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } }
         }
     </script>
-    
-    <style>
-        /* Modern Scrollbar customization */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0d1117;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #30363d;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8b949e;
-        }
-        .glow-green {
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
-        }
-    </style>
 </head>
-<body class="bg-githubDark text-[#c9d1d9] font-sans antialiased min-h-screen flex flex-col selection:bg-brandGreen/30 selection:text-white">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-    <!-- Navigation Bar -->
-    <header class="bg-[#161b22]/90 backdrop-blur border-b border-githubBorder py-4 px-4 sm:px-6 lg:px-8 sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2">
-                <div class="h-10 w-10 bg-brandGreen/10 border border-brandGreen/30 rounded-xl flex items-center justify-center text-brandGreen">
-                    <i class="fa-solid fa-recycle text-xl"></i>
-                </div>
-                <div>
-                    <span class="text-white font-extrabold text-lg tracking-tight block">ReLoop</span>
-                    <span class="text-[10px] text-brandGreen font-mono font-bold tracking-widest uppercase">Electronics</span>
-                </div>
-            </a>
-            
-            <!-- Navbar links -->
-            <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider">
-                <a href="#about-us" class="hover:text-white transition-all text-[#8b949e]">About Us</a>
-                <a href="#services" class="hover:text-white transition-all text-[#8b949e]">Our Services</a>
-                <a href="#certifications" class="hover:text-white transition-all text-[#8b949e]">Planned Certifications</a>
-                <a href="#green-hub" class="hover:text-white transition-all text-[#8b949e]">Solar Hub</a>
-                <a href="#investor-hub" class="hover:text-white transition-all text-[#8b949e]">Investor Hub</a>
-                <a href="#contact" class="hover:text-white transition-all text-[#8b949e]">Contact Us</a>
-            </nav>
-
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <a href="#investor-hub" class="px-3 py-1.5 rounded-lg border border-[#3fb950]/30 bg-[#238636]/10 text-brandGreen hover:text-white hover:bg-[#238636] transition-all text-xs font-bold uppercase tracking-wider">Investor Desk</a>
+                <div class="h-10 w-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-recycle"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">ReLoop</span>
             </div>
-        </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#about" class="hover:text-emerald-600">About</a>
+                <a href="#services" class="hover:text-emerald-600">Services</a>
+                <a href="#certifications" class="hover:text-emerald-600">Certifications</a>
+                <a href="#investor" class="hover:text-emerald-600">Investor Hub</a>
+                <a href="#contact" class="hover:text-emerald-600">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#161b22] to-githubDark">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                    <span class="h-2 w-2 rounded-full bg-brandGreen animate-pulse"></span>
-                    Dubai's Next-Generation Circular Tech Infrastructure
+    <!-- Hero -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Giving Technology<br/><span class="text-emerald-600">A Second Life.</span></h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10">Middle East's premier certified circular marketplace and refurbishment network, powered by clean energy.</p>
+        </div>
+    </section>
+
+    <!-- Services (White Cards) -->
+    <section id="services" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Our Services</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition-all">
+                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-microchip"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Device Refurbishment</h3>
+                    <p class="text-slate-600 text-sm">50-point diagnostic overhaul of hardware with 1-year warranty.</p>
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none">
-                    Giving Technology <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-emerald-400">A Second Life.</span>
-                </h1>
-                <p class="text-base text-[#8b949e] leading-relaxed max-w-2xl">
-                    We are building the largest, fully certified, software-driven circular marketplace and refurbishment network in the Middle East. Eliminating electronic waste, extending hardware lifecycles, and scaling sustainable computing with full diagnostic trust.
-                </p>
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#services" class="px-6 py-3 rounded-xl bg-brandGreen text-white font-bold text-sm hover:bg-brandGreenHover transition-all shadow-lg shadow-brandGreen/20">Our Operations</a>
-                    <a href="#investor-hub" class="px-6 py-3 rounded-xl border border-githubBorder bg-githubCard hover:bg-[#21262d] font-bold text-sm text-white transition-all">Pitch & Financial Simulator</a>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition-all">
+                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-reply"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Trade-In Engine</h3>
+                    <p class="text-slate-600 text-sm">Automated valuation and doorstep pickup for consumer gadgets.</p>
                 </div>
-            </div>
-            
-            <!-- Live Operational Metrics -->
-            <div class="lg:col-span-5 bg-githubCard border border-githubBorder rounded-3xl p-6 shadow-2xl relative glow-green">
-                <h3 class="text-xs font-bold text-white uppercase tracking-widest text-[#8b949e] border-b border-githubBorder pb-3 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-chart-line text-brandGreen"></i>
-                    Expected Regional Impact Metrics (2026-2027)
-                </h3>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between p-3 bg-githubDark/50 rounded-2xl border border-githubBorder/60">
-                        <div>
-                            <span class="text-[10px] text-[#8b949e] block font-semibold uppercase">CO2 Emissions Preventive Impact</span>
-                            <span class="text-lg font-extrabold text-white" id="liveHeroCO2">283,500 kg</span>
-                        </div>
-                        <i class="fa-solid fa-leaf text-brandGreen text-2xl"></i>
-                    </div>
-                    <div class="flex items-center justify-between p-3 bg-githubDark/50 rounded-2xl border border-githubBorder/60">
-                        <div>
-                            <span class="text-[10px] text-[#8b949e] block font-semibold uppercase">Devices Rescued from Landfills</span>
-                            <span class="text-lg font-extrabold text-[#58a6ff]" id="liveHeroDevices">15,000 pcs</span>
-                        </div>
-                        <i class="fa-solid fa-mobile-screen-button text-[#58a6ff] text-2xl"></i>
-                    </div>
-                    <p class="text-[10px] text-[#8b949e] italic leading-relaxed">
-                        *Calculated dynamically. Adjust the target funding variables in the investor simulator panel below to see how our carbon savings and processing capacities scale instantly!
-                    </p>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition-all">
+                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-trash-arrow-up"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Zero-Landfill Recycling</h3>
+                    <p class="text-slate-600 text-sm">Ethical recovery of raw materials with 0% landfill output.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition-all">
+                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-building"></i></div>
+                    <h3 class="font-bold text-lg mb-2">B2B Asset Retirement</h3>
+                    <p class="text-slate-600 text-sm">Secure, compliant bulk hardware sanitization for enterprises.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us & Our Goals Section -->
-    <section id="about-us" class="py-20 border-t border-githubBorder/40 bg-githubDark">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                    <span class="text-xs font-bold text-brandGreen uppercase tracking-widest">Who We Are</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">ReLoop Electronics: Pioneering the Circular Tech Movement</h2>
-                    <p class="text-sm text-[#8b949e] leading-relaxed">
-                        ReLoop Electronics is a Dubai-based sustainable technology organization dedicated to transforming the lifecycle of consumer electronics. Operating out of Dubai Silicon Oasis, we bridge the gap between ecological responsibility and computing affordability.
-                    </p>
-                    <p class="text-sm text-[#8b949e] leading-relaxed">
-                        By deploying advanced, software-driven diagnostics and certified high-grade refurbishing processes, we give computers, laptops, and smartphones a pristine second life—guaranteeing peak performance under strict, trustworthy warranties.
-                    </p>
+    <!-- Certifications (White Cards) -->
+    <section id="certifications" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Planned Certifications</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 border border-slate-200 rounded-2xl hover:border-emerald-500 transition-all">
+                    <h4 class="font-bold mb-2">R2v3 Standard</h4>
+                    <p class="text-sm text-slate-600">Global responsible recycling certification.</p>
                 </div>
-                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="bg-githubCard border border-githubBorder rounded-2xl p-6 space-y-3">
-                        <div class="h-10 w-10 bg-brandGreen/10 border border-brandGreen/20 rounded-lg flex items-center justify-center text-brandGreen text-lg">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <h4 class="font-bold text-white text-sm">Our Mission</h4>
-                        <p class="text-xs text-[#8b949e] leading-relaxed">
-                            To redirect massive streams of electronic waste away from regional landfills, converting hardware disposal into highly secure, energy-efficient corporate and retail tech solutions.
-                        </p>
-                    </div>
-                    <div class="bg-githubCard border border-githubBorder rounded-2xl p-6 space-y-3">
-                        <div class="h-10 w-10 bg-[#58a6ff]/10 border border-[#58a6ff]/20 rounded-lg flex items-center justify-center text-[#58a6ff] text-lg">
-                            <i class="fa-solid fa-earth-americas"></i>
-                        </div>
-                        <h4 class="font-bold text-white text-sm">Our Vision</h4>
-                        <p class="text-xs text-[#8b949e] leading-relaxed">
-                            To establish the Middle East's primary zero-waste, carbon-neutral circular marketplace where sustainable computing becomes the baseline norm for organizations and individuals alike.
-                        </p>
-                    </div>
+                <div class="p-6 border border-slate-200 rounded-2xl hover:border-emerald-500 transition-all">
+                    <h4 class="font-bold mb-2">e-Stewards</h4>
+                    <p class="text-sm text-slate-600">Ethical E-Waste management standard.</p>
                 </div>
-            </div>
-
-            <!-- Operational Strategic Goals -->
-            <div class="mt-16 bg-[#161b22] border border-githubBorder rounded-3xl p-8">
-                <div class="max-w-3xl">
-                    <span class="text-xs font-bold text-[#58a6ff] uppercase tracking-widest">Horizon 2028</span>
-                    <h3 class="text-2xl font-extrabold text-white mt-2 mb-4">Our Strategic Milestones</h3>
+                <div class="p-6 border border-slate-200 rounded-2xl hover:border-emerald-500 transition-all">
+                    <h4 class="font-bold mb-2">ISO 14001</h4>
+                    <p class="text-sm text-slate-600">Environmental management system.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-                    <div class="border-l-2 border-brandGreen/30 pl-4 space-y-1">
-                        <span class="text-2xl font-black text-white">100,000+</span>
-                        <h5 class="text-xs font-bold text-white uppercase">Devices Rescued</h5>
-                        <p class="text-xs text-[#8b949e]">To collect, refurbish, and safely redistribute fully functional tech assets back into localized economies by 2028.</p>
-                    </div>
-                    <div class="border-l-2 border-[#58a6ff]/30 pl-4 space-y-1">
-                        <span class="text-2xl font-black text-[#58a6ff]">1.5M kg</span>
-                        <h5 class="text-xs font-bold text-white uppercase">CO2 Prevented</h5>
-                        <p class="text-xs text-[#8b949e]">To significantly lower regional carbon footprints by reducing dependencies on raw semiconductor extraction and heavy new factory runs.</p>
-                    </div>
-                    <div class="border-l-2 border-purple-500/30 pl-4 space-y-1">
-                        <span class="text-2xl font-black text-purple-400">100% Green</span>
-                        <h5 class="text-xs font-bold text-white uppercase">Clean Operations</h5>
-                        <p class="text-xs text-[#8b949e]">To run all repair, warehouse, diagnostic logic engines, and shipping loops powered strictly by decentralized clean energy.</p>
-                    </div>
+                <div class="p-6 border border-slate-200 rounded-2xl hover:border-emerald-500 transition-all">
+                    <h4 class="font-bold mb-2">ISO 9001</h4>
+                    <p class="text-sm text-slate-600">Quality management standards.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 border-t border-githubBorder/40 bg-githubDark">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-bold text-brandGreen uppercase tracking-widest">Enterprise Capabilities</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Our Circular Business & Refurbishment Services</h2>
-                <p class="text-sm text-[#8b949e]">
-                    A comprehensive, closed-loop approach bridging individuals and institutions to reliable, highly certified refurbished computing hardware.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service 1 -->
-                <div class="bg-[#161b22] border border-githubBorder rounded-2xl p-6 hover:-translate-y-1 transition-all">
-                    <div class="h-12 w-12 rounded-xl bg-brandGreen/10 border border-brandGreen/30 flex items-center justify-center text-brandGreen mb-4">
-                        <i class="fa-solid fa-microchip text-xl"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-white mb-2">Device Refurbishment</h3>
-                    <p class="text-xs text-[#8b949e] leading-relaxed">
-                        Industry-grade 50-point diagnostic tests ensuring OEM performance. Overhauling batteries, thermals, and logic circuits to pristine condition with 1-year local warranty.
-                    </p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-[#161b22] border border-githubBorder rounded-2xl p-6 hover:-translate-y-1 transition-all">
-                    <div class="h-12 w-12 rounded-xl bg-[#58a6ff]/10 border border-[#58a6ff]/30 flex items-center justify-center text-[#58a6ff] mb-4">
-                        <i class="fa-solid fa-reply text-xl"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-white mb-2">Instant Trade-In Engine</h3>
-                    <p class="text-xs text-[#8b949e] leading-relaxed">
-                        Our dynamic pricing engine offers fair, automated algorithms determining value for old consumer gadgets. We pickup right from customers' doorsteps in UAE.
-                    </p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-[#161b22] border border-githubBorder rounded-2xl p-6 hover:-translate-y-1 transition-all">
-                    <div class="h-12 w-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
-                        <i class="fa-solid fa-trash-arrow-up text-xl"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-white mb-2">Zero-Landfill Recycling</h3>
-                    <p class="text-xs text-[#8b949e] leading-relaxed">
-                        Ethical end-of-life recovery of gold, copper, silicon, and aluminum. Partnering with localized smelters to achieve absolutely zero e-waste landfill output.
-                    </p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-[#161b22] border border-githubBorder rounded-2xl p-6 hover:-translate-y-1 transition-all">
-                    <div class="h-12 w-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4">
-                        <i class="fa-solid fa-building text-xl"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-white mb-2">B2B IT Asset Retirement</h3>
-                    <p class="text-xs text-[#8b949e] leading-relaxed">
-                        Bulk lifecycle retirements, hardware leases, and secure sanitization services matching US DoD data destruction standards for corporate partners in Dubai.
-                    </p>
-                </div>
-            </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900 text-white text-center">
+        <h2 class="text-3xl font-bold mb-12">Connect With Us</h2>
+        <div class="flex justify-center gap-8 text-2xl">
+            <a href="https://wa.me/971501234567" class="hover:text-emerald-400"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:hello@reloop-electronics.com" class="hover:text-emerald-400"><i class="fa-solid fa-envelope"></i></a>
         </div>
     </section>
-
-    <!-- Planned Certifications Section -->
-    <section id="certifications" class="py-20 border-t border-githubBorder/40 bg-[#161b22]/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-bold text-[#58a6ff] uppercase tracking-widest">Global Compliance Roadmap</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Trust Credentials We are Actively Working to Secure</h2>
-                <p class="text-sm text-[#8b949e]">
-                    To unlock premium global markets and institutional corporate contracts, ReLoop is actively positioning its refurbishment hubs to secure key environmental and diagnostic standards.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Cert 1 -->
-                <div class="bg-githubCard border border-githubBorder rounded-2xl p-5 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 h-1.5 w-full bg-brandGreen"></div>
-                    <span class="bg-brandGreen/10 text-brandGreen text-[9px] font-mono font-bold px-2 py-0.5 rounded-full uppercase">Target: Year 1</span>
-                    <h4 class="font-extrabold text-white text-base mt-3 mb-1">R2v3 Standard</h4>
-                    <p class="text-[10px] text-[#8b949e] uppercase font-semibold">Responsible Recycling Certification</p>
-                    <p class="text-xs text-[#8b949e] mt-3 leading-relaxed">
-                        The definitive global standard for electronics recyclers, assuring clean facility practices, strict downstream tracking, and solid hardware security guidelines.
-                    </p>
-                </div>
-
-                <!-- Cert 2 -->
-                <div class="bg-githubCard border border-githubBorder rounded-2xl p-5 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 h-1.5 w-full bg-[#58a6ff]"></div>
-                    <span class="bg-[#58a6ff]/10 text-[#58a6ff] text-[9px] font-mono font-bold px-2 py-0.5 rounded-full uppercase">Target: Year 1</span>
-                    <h4 class="font-extrabold text-white text-base mt-3 mb-1">e-Stewards</h4>
-                    <p class="text-[10px] text-[#8b949e] uppercase font-semibold">Ethical E-Waste Management</p>
-                    <p class="text-xs text-[#8b949e] mt-3 leading-relaxed">
-                        Ensures the absolute restriction of illegal e-waste exports to developing countries and strict protection of corporate customer data sanitization on hard drives.
-                    </p>
-                </div>
-
-                <!-- Cert 3 -->
-                <div class="bg-githubCard border border-githubBorder rounded-2xl p-5 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 h-1.5 w-full bg-purple-500"></div>
-                    <span class="bg-purple-500/10 text-purple-400 text-[9px] font-mono font-bold px-2 py-0.5 rounded-full uppercase">Target: Year 2</span>
-                    <h4 class="font-extrabold text-white text-base mt-3 mb-1">ISO 14001</h4>
-                    <p class="text-[10px] text-[#8b949e] uppercase font-semibold">Environmental Management System</p>
-                    <p class="text-xs text-[#8b949e] mt-3 leading-relaxed">
-                        A systematic framework validating our carbon-reduction initiatives, chemical hazard procedures, and eco-friendly warehouse workflows.
-                    </p>
-                </div>
-
-                <!-- Cert 4 -->
-                <div class="bg-githubCard border border-githubBorder rounded-2xl p-5 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 h-1.5 w-full bg-amber-500"></div>
-                    <span class="bg-amber-500/10 text-amber-400 text-[9px] font-mono font-bold px-2 py-0.5 rounded-full uppercase">Target: Year 2</span>
-                    <h4 class="font-extrabold text-white text-base mt-3 mb-1">ISO 9001</h4>
-                    <p class="text-[10px] text-[#8b949e] uppercase font-semibold">Quality Management Systems</p>
-                    <p class="text-xs text-[#8b949e] mt-3 leading-relaxed">
-                        Validates the consistency of our 50-point diagnostics, tracking metrics, and warranty resolution loops, raising institutional consumer confidence.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Green Energy Warehouse Hub -->
-    <section id="green-hub" class="py-20 border-t border-githubBorder/40 bg-githubDark">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                    <span class="text-xs font-bold text-brandGreen uppercase tracking-widest">Sustainable Infrastructure</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Clean Energy Refurbishment Hubs</h2>
-                    <p class="text-sm text-[#8b949e] leading-relaxed">
-                        To claim authentic zero-emissions, we don't just recycle; we power our entire operations cleanly. ReLoop's planned processing facilities inside Dubai Silicon Oasis are designed to utilize 100% solar arrays for hardware repair stations, server operations, and battery cycle testers.
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="h-10 w-10 bg-[#3fb950]/10 border border-[#3fb950]/30 rounded-xl flex items-center justify-center text-brandGreen">
-                            <i class="fa-solid fa-solar-panel"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold text-white">Dubai Clean Energy Strategy 2050</h4>
-                            <p class="text-[11px] text-[#8b949e]">Aligning directly with Dubai's regional goals of generating 100% of power from clean source pathways.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solar Simulator Box -->
-                <div class="lg:col-span-6 bg-githubCard border border-githubBorder rounded-3xl p-6 shadow-xl space-y-4">
-                    <div class="flex justify-between items-center border-b border-githubBorder pb-3">
-                        <span class="text-xs font-bold text-white uppercase tracking-widest">DSO Solarpower Array Simulated Stats</span>
-                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/15 text-brandGreen border border-brandGreen/30 animate-pulse">
-                            ACTIVE
-                        </span>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 text-center">
-                        <div class="bg-githubDark p-3 rounded-2xl border border-githubBorder/60">
-                            <span class="text-[10px] text-[#8b949e] block font-semibold uppercase">Daily Solar Yield</span>
-                            <span class="text-xl font-bold text-[#3fb950]">142.5 kWh</span>
-                        </div>
-                        <div class="bg-githubDark p-3 rounded-2xl border border-githubBorder/60">
-                            <span class="text-[10px] text-[#8b949e] block font-semibold uppercase">Battery System SoC</span>
-                            <span class="text-xl font-bold text-[#58a6ff]" id="solarBatteryPercent">82%</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-githubDark/50 p-3 rounded-2xl border border-githubBorder/40">
-                        <div class="flex justify-between text-[10px] text-[#8b949e] font-semibold uppercase mb-1">
-                            <span>Solar Array Load Capacity</span>
-                            <span id="loadPercentText">75%</span>
-                        </div>
-                        <div class="w-full bg-[#30363d] h-2 rounded-full overflow-hidden">
-                            <div class="bg-brandGreen h-full rounded-full transition-all duration-1000" id="solarLoadBar" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                    <p class="text-[10px] text-[#8b949e] italic leading-relaxed text-center">
-                        *Simulated real-time status: Reflects typical sunny conditions in Dubai and consumption of 120 device testing rigs.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Investor Relations Section -->
-    <section id="investor-hub" class="py-20 border-t border-githubBorder/40 bg-githubDark relative">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brandGreen/5 via-transparent to-transparent pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-bold text-brandGreen uppercase tracking-widest">Venture Capital & Funding</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Institutional Investor Portal</h2>
-                <p class="text-sm text-[#8b949e]">
-                    Access our interactive Pitch Deck, calculate projected operational scenarios, and review the Dubai Silicon Oasis startup establishment costs.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                
-                
-
-                    <!-- Instant Metrics Display -->
-                    
-                    </div>
-                </div>
-
-                <!-- Right Pitch Deck Display Component -->
-                <div class="lg:col-span-3 space-y-6">
-                    <div class="bg-githubCard border border-githubBorder rounded-3xl shadow-2xl overflow-hidden flex flex-col min-h-[500px]">
-                        <!-- Deck Header Bar -->
-                        <div class="bg-[#1f242c] px-4 py-3 border-b border-githubBorder flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                            <div class="flex items-center gap-2">
-                                <span class="inline-flex items-center justify-center h-2 w-2 rounded-full bg-brandGreen animate-pulse"></span>
-                                <span class="text-xs font-mono text-white font-bold" id="deckFileName">01_The_Vision.md</span>
-                                <span class="text-[#8b949e] text-xs">| Interactive ESG Seed Presentation</span>
-                            </div>
-                            <div class="flex items-center gap-1.5">
-                                <button onclick="prevSlide()" class="px-2.5 py-1.5 bg-githubDark border border-githubBorder rounded-lg text-xs font-bold text-[#8b949e] hover:text-white transition-all">
-                                    <i class="fa-solid fa-arrow-left"></i> Prev
-                                </button>
-                                <span class="text-xs font-mono text-[#8b949e] px-2" id="deckSlideIndicator">1 / 10</span>
-                                <button onclick="nextSlide()" class="px-2.5 py-1.5 bg-githubDark border border-githubBorder rounded-lg text-xs font-bold text-[#8b949e] hover:text-white transition-all">
-                                    Next <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Rendered Slide Frame -->
-                        <div class="p-6 sm:p-8 flex-grow flex flex-col justify-center" id="deckContentBox">
-                            <!-- Injected dynamically via JS -->
-                        </div>
-                    </div>
-
-                    
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section id="contact" class="py-20 border-t border-githubBorder/40 bg-[#161b22]/50 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-bold text-brandGreen uppercase tracking-widest">Get In Touch</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Connect With Our Team</h2>
-                <p class="text-sm text-[#8b949e]">
-                    Whether you are an institutional investor, a corporate partner looking to retire hardware assets, or a clean-tech enthusiast, we would love to hear from you.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- WhatsApp Contact -->
-                <a href="https://wa.me/971501234567" target="_blank" class="bg-githubCard border border-githubBorder rounded-2xl p-6 flex flex-col items-center text-center space-y-4 hover:border-[#25d366] transition-all group">
-                    <div class="h-14 w-14 rounded-full bg-[#25d366]/10 flex items-center justify-center text-[#25d366] text-2xl group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-extrabold text-white text-base">WhatsApp Support</h4>
-                        <p class="text-xs text-[#8b949e] mt-1">Direct instant chat with our relations team</p>
-                    </div>
-                    <span class="text-xs text-[#25d366] font-bold">Message Us &rarr;</span>
-                </a>
-
-                <!-- Email Contact -->
-                <a href="mailto:hello@reloop-electronics.com" class="bg-githubCard border border-githubBorder rounded-2xl p-6 flex flex-col items-center text-center space-y-4 hover:border-brandGreen transition-all group">
-                    <div class="h-14 w-14 rounded-full bg-brandGreen/10 flex items-center justify-center text-brandGreen text-2xl group-hover:scale-110 transition-transform">
-                        <i class="fa-regular fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-extrabold text-white text-base">Email Inquiries</h4>
-                        <p class="text-xs text-[#8b949e] mt-1">General partnerships & corporate asset sales</p>
-                    </div>
-                    <span class="text-xs text-brandGreen font-bold">hello@reloop-electronics.com</span>
-                </a>
-
-                <!-- X Contact -->
-                <a href="https://x.com/ReLoop_Electronics" target="_blank" class="bg-githubCard border border-githubBorder rounded-2xl p-6 flex flex-col items-center text-center space-y-4 hover:border-[#1da1f2] transition-all group">
-                    <div class="h-14 w-14 rounded-full bg-[#1da1f2]/10 flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform">
-                        <!-- Standard FontAwesome Twitter/X Icon -->
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-extrabold text-white text-base">X Platform</h4>
-                        <p class="text-xs text-[#8b949e] mt-1">Follow our latest green-tech announcements</p>
-                    </div>
-                    <span class="text-xs text-[#1da1f2] font-bold">Follow @ReLoop_Electronics</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Footer -->
-    <footer class="bg-githubCard border-t border-githubBorder py-8 px-4 sm:px-6 lg:px-8 mt-auto">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-xs text-[#8b949e]">
-            <div class="flex items-center gap-2">
-                <i class="fa-brands fa-github text-lg text-white"></i>
-                <span>© 2026 ReLoop Electronics. Open-sourced under MIT License. All rights reserved.</span>
-            </div>
-            <div class="flex gap-4">
-                <a href="#about-us" class="hover:text-white hover:underline transition-all">About Us</a>
-                <a href="#services" class="hover:text-white hover:underline transition-all">Services</a>
-                <a href="#certifications" class="hover:text-white hover:underline transition-all">Planned Certifications</a>
-                <a href="#green-hub" class="hover:text-white hover:underline transition-all">Solar Operations</a>
-                <a href="#investor-hub" class="hover:text-white hover:underline transition-all">Investor Hub</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Interactive Client State Management
-        let appState = {
-            currentSlideIndex: 0,
-            brandName: "ReLoop Electronics",
-            fundingTarget: 750000,
-            equityOffered: 15,
-            burnRate: 45000,
-            
-            // Solar Simulator Variables
-            solarBattery: 82,
-            solarLoad: 75
-        };
-
-        // Static slide contents
-        const slides = [
-            {
-                fileName: "01_The_Vision.md",
-                render: () => `
-                    <div class="space-y-6 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                            Opportunity Introduction
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">The <span class="text-brandGreen">${appState.brandName}</span> Vision</h2>
-                        <p class="text-sm text-[#8b949e] leading-relaxed">
-                            Building a modern, highly trusted circular computing ecosystem designed specifically for the MENA consumer hardware markets. ReLoop refurbishes consumer electronics under rigorous, planned diagnostic certifications (R2v3, ISO 14001) to provide corporate-grade computing with premium sustainability metrics.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder">
-                                <span class="text-[9px] text-[#8b949e] font-bold block uppercase">GCC Refurbished Market TAM (2026)</span>
-                                <span class="text-sm font-bold text-white">4.2 Billion AED / Year</span>
-                            </div>
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder">
-                                <span class="text-[9px] text-[#8b949e] font-bold block uppercase">Compound Annual Growth (CAGR)</span>
-                                <span class="text-sm font-bold text-brandGreen">+18.5% YoY Expansion</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "02_The_Problem.md",
-                render: () => `
-                    <div class="space-y-6 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-red-500/10 text-red-400 border border-red-500/20">
-                            The Challenge
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">The Affordability & E-Waste Crisis</h2>
-                        <div class="space-y-3">
-                            <div class="p-3 bg-red-500/5 rounded-xl border border-red-500/10 text-xs text-[#8b949e]">
-                                <strong class="text-white">Escalating Hardware Pricing:</strong> Brand new computing platforms are pricing out students, freelancers, and small businesses.
-                            </div>
-                            <div class="p-3 bg-red-500/5 rounded-xl border border-red-500/10 text-xs text-[#8b949e]">
-                                <strong class="text-white">Massive E-Waste Landfills:</strong> Less than 20% of global hardware is ethically recycled. Millions of salvageable devices enter regional landfills.
-                            </div>
-                            <div class="p-3 bg-red-500/5 rounded-xl border border-red-500/10 text-xs text-[#8b949e]">
-                                <strong class="text-white">Zero Consumer Trust:</strong> Buyers of local used tech face high fraud rates, hidden hardware defects, and lack of real warranty options.
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "03_The_Solution.md",
-                render: () => `
-                    <div class="space-y-6 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                            Our Solution
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">Trust, Quality & Sustainability</h2>
-                        <p class="text-xs text-[#8b949e]">How <strong class="text-white">${appState.brandName}</strong> closes the loops safely for regional electronics consumers:</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder space-y-2">
-                                <i class="fa-solid fa-clipboard-check text-brandGreen"></i>
-                                <h5 class="text-xs font-bold text-white">50-Point Inspection</h5>
-                                <p class="text-[10px] text-[#8b949e]">Rigorous software and component testing before any resale.</p>
-                            </div>
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder space-y-2">
-                                <i class="fa-solid fa-shield-halved text-[#58a6ff]"></i>
-                                <h5 class="text-xs font-bold text-white">12-Month Gold Warranty</h5>
-                                <p class="text-[10px] text-[#8b949e]">Providing absolute consumer confidence similar to new purchases.</p>
-                            </div>
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder space-y-2">
-                                <i class="fa-solid fa-leaf text-purple-400"></i>
-                                <h5 class="text-xs font-bold text-white">Carbon Auditing</h5>
-                                <p class="text-[10px] text-[#8b949e]">Providing clear carbon prevent metrics with every order.</p>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "04_MVP_Traction.json",
-                render: () => `
-                    <div class="space-y-6 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                            Traction Metrics
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">Our Proof of Concept</h2>
-                        <p class="text-sm text-[#8b949e]">Key validation points achieved during our early pilot MVP operations in UAE:</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder text-center">
-                                <span class="text-[9px] text-[#8b949e] font-bold block uppercase mb-1">Monthly Sales</span>
-                                <span class="text-2xl font-black text-white">240 Units</span>
-                                <span class="text-[9px] text-brandGreen block mt-1"><i class="fa-solid fa-arrow-up"></i> +25% MoM Growth</span>
-                            </div>
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder text-center">
-                                <span class="text-[9px] text-[#8b949e] font-bold block uppercase mb-1">Average Order Value</span>
-                                <span class="text-2xl font-black text-white">1,200 AED</span>
-                                <span class="text-[9px] text-[#8b949e] block mt-1">High purchase velocity</span>
-                            </div>
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder text-center">
-                                <span class="text-[9px] text-[#8b949e] font-bold block uppercase mb-1">Low Return Rate</span>
-                                <span class="text-2xl font-black text-[#58a6ff]">1.2%</span>
-                                <span class="text-[9px] text-[#8b949e] block mt-1">Proven diagnostic trust</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "05_Market_Size.md",
-                render: () => `
-                    <div class="space-y-5 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                            Market Sizing
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">The Middle East TAM</h2>
-                        <div class="space-y-2 text-xs">
-                            <div class="flex justify-between items-center p-2.5 bg-githubDark rounded-xl border border-githubBorder">
-                                <span class="text-[#8b949e] font-bold uppercase text-[9px]">Total Addressable Market (TAM)</span>
-                                <span class="font-bold text-white">15,000,000,000 AED</span>
-                            </div>
-                            <div class="flex justify-between items-center p-2.5 bg-githubDark rounded-xl border border-githubBorder">
-                                <span class="text-[#58a6ff] font-bold uppercase text-[9px]">Serviceable Addressable Market (SAM)</span>
-                                <span class="font-bold text-[#58a6ff]">3,200,000,000 AED</span>
-                            </div>
-                            <div class="flex justify-between items-center p-2.5 bg-githubDark rounded-xl border border-githubBorder">
-                                <span class="text-brandGreen font-bold uppercase text-[9px]">Serviceable Obtainable Market (SOM)</span>
-                                <span class="font-bold text-brandGreen">320,000,000 AED</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "06_Business_Model.md",
-                render: () => `
-                    <div class="space-y-6 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                            Unit Economics
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">High-Margin Revenue Models</h2>
-                        <p class="text-xs text-[#8b949e]">Three highly optimized sales channels fueling the growth of <strong>${appState.brandName}</strong>:</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder space-y-1">
-                                <span class="text-[9px] text-[#8b949e] font-bold uppercase">B2C Retail Margin</span>
-                                <span class="text-xl font-bold text-white block">35% Profit Margin</span>
-                                <p class="text-[9px] text-[#8b949e]">Direct refurbishment and online sales to consumer segments.</p>
-                            </div>
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder space-y-1">
-                                <span class="text-[9px] text-[#8b949e] font-bold uppercase">Marketplace Commissions</span>
-                                <span class="text-xl font-bold text-[#58a6ff] block">15% Commission</span>
-                                <p class="text-[9px] text-[#8b949e]">Enabling 3rd-party certified refurbishers to trade securely.</p>
-                            </div>
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder space-y-1">
-                                <span class="text-[9px] text-[#8b949e] font-bold uppercase">B2B Device Leasing</span>
-                                <span class="text-xl font-bold text-purple-400 block">HaaS Model</span>
-                                <p class="text-[9px] text-[#8b949e]">Supplying enterprise-grade laptops on subscription leases.</p>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "07_Technology_AI.py",
-                render: () => `
-                    <div class="space-y-4 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                            Proprietary Software IP
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">Algorithmic Sourcing Engine</h2>
-                        <p class="text-xs text-[#8b949e]">Automated valuation systems calculate consumer trade-in offers instantaneously:</p>
-                        <div class="bg-githubDark rounded-xl border border-githubBorder p-3 text-left overflow-x-auto">
-                            <pre class="text-[10px] font-mono text-[#e6edf3]"><span class="text-[#ff7b72]">def</span> <span class="text-[#d2a8ff]">reloop_pricing_engine</span>(oem_base, condition, battery, supply_index):
-    condition_weight = condition * <span class="text-[#79c0ff]">0.60</span>
-    battery_weight = (battery / <span class="text-[#79c0ff]">100.0</span>) * <span class="text-[#79c0ff]">0.40</span>
-    
-    adjusted_value = oem_base * (condition_weight + battery_weight)
-    fair_market_offer = adjusted_value * supply_index
-    <span class="text-[#ff7b72]">return</span> max(fair_market_offer, oem_base * <span class="text-[#79c0ff]">0.12</span>)
-
-print(<span class="text-[#a5d6ff]">"Automated Device Offer Price:"</span>, reloop_pricing_engine(<span class="text-[#79c0ff]">4000</span>, <span class="text-[#79c0ff]">0.85</span>, <span class="text-[#79c0ff]">88</span>, <span class="text-[#79c0ff]">1.05</span>))
-<span class="text-brandGreen font-bold"># Calculated payout to user instantly: 3,620.4 AED</span></pre>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "08_Competition.md",
-                render: () => `
-                    <div class="space-y-6 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                            Defensibility
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">Our Moat & Competitive Edge</h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder space-y-1">
-                                <h6 class="text-xs font-bold text-red-400">Classifieds / Souqs</h6>
-                                <p class="text-[10px] text-[#8b949e]">❌ Zero device warranties, high risk of defective or stolen hardware components.</p>
-                            </div>
-                            <div class="bg-githubDark p-4 rounded-xl border border-githubBorder space-y-1">
-                                <h6 class="text-xs font-bold text-[#58a6ff]">Global Players</h6>
-                                <p class="text-[10px] text-[#8b949e]">❌ High international shipping latency and lack of localized Middle East diagnostic processing facilities.</p>
-                            </div>
-                            <div class="bg-[#1b3b22]/20 p-4 rounded-xl border border-brandGreen/30 space-y-1">
-                                <h6 class="text-xs font-bold text-brandGreen">The ReLoop Moat</h6>
-                                <p class="text-[10px] text-white">✅ ISO/R2v3 compliant hubs, instant doorstep logistics, local 1-year warranty structures.</p>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "09_Roadmap_IPO.json",
-                render: () => `
-                    <div class="space-y-5 text-left">
-                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                            Scale Horizons
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">The Growth Pathway</h2>
-                        <div class="relative border-l-2 border-githubBorder ml-4 space-y-4 py-1 text-xs">
-                            <div class="relative pl-5">
-                                <div class="absolute left-[-7px] top-1 h-3 w-3 rounded-full bg-brandGreen"></div>
-                                <span class="text-[9px] font-mono text-[#8b949e]">2026 - Establishing Dubai Baseline</span>
-                                <h6 class="font-bold text-white text-xs">DSO Operations</h6>
-                                <p class="text-[10px] text-[#8b949e]">Deploy smart solar hubs, secure R2v3 licensing, onboarding first 5,000 customers.</p>
-                            </div>
-                            <div class="relative pl-5">
-                                <div class="absolute left-[-7px] top-1 h-3 w-3 rounded-full bg-[#58a6ff]"></div>
-                                <span class="text-[9px] font-mono text-[#8b949e]">2027-2028 - Regional Scaling</span>
-                                <h6 class="font-bold text-white text-xs">Saudi Arabia Expansion</h6>
-                                <p class="text-[10px] text-[#8b949e]">Launching dedicated diagnostic fulfillment hubs in Riyadh to conquer Saudi consumer market.</p>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                fileName: "10_The_Ask_Team.md",
-                render: () => {
-                    const dynamicVal = (appState.fundingTarget / appState.equityOffered) * 100;
-                    return `
-                        <div class="space-y-6 text-left">
-                            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brandGreen/10 text-brandGreen border border-brandGreen/20">
-                                Active Seed Round
-                            </span>
-                            <h2 class="text-3xl font-extrabold text-white leading-tight">The Capital Ask</h2>
-                            <p class="text-xs text-[#8b949e]">Currently accepting commitments for our early seed equity round:</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="bg-githubDark p-4 rounded-xl border border-githubBorder">
-                                    <span class="text-[9px] text-[#8b949e] font-bold block uppercase">Funding Ask Target</span>
-                                    <span class="text-lg font-black text-brandGreen">${appState.fundingTarget.toLocaleString('en-US')} AED</span>
-                                    <span class="text-[9px] text-[#8b949e] block">Equivalent to ${appState.equityOffered}% primary equity</span>
-                                </div>
-                                <div class="bg-githubDark p-4 rounded-xl border border-githubBorder">
-                                    <span class="text-[9px] text-[#8b949e] font-bold block uppercase">Implied Post-Money Valuation</span>
-                                    <span class="text-lg font-black text-[#58a6ff]">${Math.round(dynamicVal).toLocaleString('en-US')} AED</span>
-                                    <span class="text-[9px] text-[#8b949e] block">Supported by active pilot economic yields</span>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                }
-            }
-        ];
-
-        function runFinancialSim() {
-            // Read UI values
-            appState.fundingTarget = parseFloat(document.getElementById('scFunding').value) || 0;
-            appState.equityOffered = parseFloat(document.getElementById('scEquity').value) || 1;
-            appState.burnRate = parseFloat(document.getElementById('scBurn').value) || 1;
-
-            // Calculations
-            const postValuation = (appState.fundingTarget / appState.equityOffered) * 100;
-            const runway = appState.fundingTarget / appState.burnRate;
-
-            // Update UI elements
-            document.getElementById('simValuation').innerText = Math.round(postValuation).toLocaleString('en-US') + " AED";
-            document.getElementById('simRunway').innerText = runway.toFixed(1) + " Months";
-
-            // Update Home Screen Dynamic Impact Estimates
-            const heroCO2Value = Math.round((appState.fundingTarget / 1000) * 378);
-            const heroDevicesValue = Math.round(appState.fundingTarget / 50);
-            
-            document.getElementById('liveHeroCO2').innerText = heroCO2Value.toLocaleString('en-US') + " kg";
-            document.getElementById('liveHeroDevices').innerText = heroDevicesValue.toLocaleString('en-US') + " pcs";
-
-            // Re-render current slide frame
-            renderActiveSlide();
-        }
-
-        function updateScBrand() {
-            appState.brandName = document.getElementById('scBrand').value || "ReLoop Electronics";
-            renderActiveSlide();
-        }
-
-        function renderActiveSlide() {
-            const slide = slides[appState.currentSlideIndex];
-            
-            // Set header file name and slide indicator
-            document.getElementById('deckFileName').innerText = slide.fileName;
-            document.getElementById('deckSlideIndicator').innerText = `${appState.currentSlideIndex + 1} / ${slides.length}`;
-            
-            // Inject slide content html
-            document.getElementById('deckContentBox').innerHTML = slide.render();
-        }
-
-        function nextSlide() {
-            if (appState.currentSlideIndex < slides.length - 1) {
-                appState.currentSlideIndex++;
-                renderActiveSlide();
-            }
-        }
-
-        function prevSlide() {
-            if (appState.currentSlideIndex > 0) {
-                appState.currentSlideIndex--;
-                renderActiveSlide();
-            }
-        }
-
-        // Keyboard navigation binding
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') nextSlide();
-            if (e.key === 'ArrowLeft') prevSlide();
-        });
-
-        function runDsoCalc() {
-            const licenseSel = document.getElementById('dsoLicense').value;
-            const officeSel = document.getElementById('dsoOffice').value;
-            const visasSel = parseInt(document.getElementById('dsoVisas').value);
-
-            let licenseFee = 15000;
-            if (licenseSel === 'general') licenseFee = 25000;
-            if (licenseSel === 'tech') licenseFee = 18000;
-
-            let officeFee = 10000;
-            if (officeSel === 'private') officeFee = 35000;
-
-            const visaFee = visasSel * 5500;
-
-            const totalFee = licenseFee + officeFee + visaFee;
-            document.getElementById('calcDsoTotal').innerText = totalFee.toLocaleString('en-US') + " AED";
-        }
-
-        function startSolarSimulator() {
-            setInterval(() => {
-                // Fluctuating Battery Level
-                const batteryChange = (Math.random() * 2 - 1) * 0.5;
-                appState.solarBattery = Math.min(100, Math.max(20, appState.solarBattery + batteryChange));
-                const solarBatText = document.getElementById('solarBatteryPercent');
-                if (solarBatText) {
-                    solarBatText.innerText = Math.round(appState.solarBattery) + "%";
-                }
-
-                // Fluctuating Load Capacity
-                const loadChange = (Math.random() * 4 - 2);
-                appState.solarLoad = Math.min(100, Math.max(10, appState.solarLoad + loadChange));
-                const loadPercentText = document.getElementById('loadPercentText');
-                const solarLoadBar = document.getElementById('solarLoadBar');
-                if (loadPercentText && solarLoadBar) {
-                    loadPercentText.innerText = Math.round(appState.solarLoad) + "%";
-                    solarLoadBar.style.width = Math.round(appState.solarLoad) + "%";
-                }
-            }, 3000);
-        }
-
-        // Initialize elements on load
-        window.onload = function() {
-            runFinancialSim();
-            runDsoCalc();
-            renderActiveSlide();
-            startSolarSimulator();
-        };
-    </script>
 </body>
 </html>
