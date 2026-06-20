@@ -18,18 +18,10 @@ We are committed to transparency and sustainable growth. Our post-funding equity
 
 | Stakeholder | Equity Share |
 | :--- | :--- |
-| **Founders (M & J)** | **60%** |
-| **New Strategic Investors** | **40%** |
+| **Founders (M & J)** | **70%** |
+| **New Strategic Investors** | **30%** |
 
-*We are currently opening 40% equity to strategic investors to accelerate our global footprint and enhance our refurbishment infrastructure.*
+*We are currently opening 30% equity to strategic investors to accelerate our global footprint and enhance our refurbishment infrastructure.*
 
-## 💻 Tech Stack
-- **Framework:** Laravel 13
-- **Styling:** Tailwind CSS
-- **Interactivity:** Alpine.js / JavaScript
-- **Deployment:** Optimized for high-performance hosting environments.
-
-## 📦 How to Setup
-1. Clone the repository:
-```bash
-   git clone [https://github.com/AfandiTech/ReLoop.git](https://github.com/AfandiTech/ReLoop.git)
+https://afanditech.github.io/ReLoop/
+support@mahmoudafandi.com
