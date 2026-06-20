@@ -51,15 +51,89 @@
 
     <!-- Products -->
     <section id="products" class="py-20 bg-slate-50 scroll-reveal">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold mb-16">Our Products</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl border p-8"><img src="public/images/pc.jpg" class="h-40 mx-auto object-contain mb-4"><h4 class="text-xl font-bold">Laptops</h4></div>
-                <div class="bg-white rounded-3xl border p-8"><img src="public/images/mobilephones.jpeg" class="h-40 mx-auto object-contain mb-4"><h4 class="text-xl font-bold">Smartphones</h4></div>
-                <div class="bg-white rounded-3xl border p-8"><img src="public/images/tabblet.jpeg" class="h-40 mx-auto object-contain mb-4"><h4 class="text-xl font-bold">Tablets</h4></div>
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-extrabold mb-16">Our Products</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-3xl border p-8 cursor-pointer hover:shadow-xl transition" onclick="openModal('Laptops')">
+                <img src="public/images/pc.jpg" class="h-40 mx-auto object-contain mb-4">
+                <h4 class="text-xl font-bold">Laptops</h4>
+            </div>
+            <div class="bg-white rounded-3xl border p-8 cursor-pointer hover:shadow-xl transition" onclick="openModal('Smartphones')">
+                <img src="public/images/mobilephones.jpeg" class="h-40 mx-auto object-contain mb-4">
+                <h4 class="text-xl font-bold">Smartphones</h4>
+            </div>
+            <div class="bg-white rounded-3xl border p-8 cursor-pointer hover:shadow-xl transition" onclick="openModal('Tablets')">
+                <img src="public/images/tabblet.jpeg" class="h-40 mx-auto object-contain mb-4">
+                <h4 class="text-xl font-bold">Tablets</h4>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<div id="productModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 p-4">
+    <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[80vh] flex flex-col shadow-2xl">
+        <div class="p-6 border-b flex justify-between items-center">
+            <h3 id="modalTitle" class="text-2xl font-bold text-emerald-600">Product Inventory</h3>
+            <button onclick="closeModal()" class="text-slate-500 hover:text-black text-2xl">&times;</button>
+        </div>
+        
+        <div class="overflow-y-auto p-6">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-100 text-slate-700">
+                        <th class="p-3 border">ID</th>
+                        <th class="p-3 border">Name</th>
+                        <th class="p-3 border">Quantity</th>
+                        <th class="p-3 border">Storage</th>
+                        <th class="p-3 border">Grade</th>
+                        <th class="p-3 border">Battery Health</th>
+                    </tr>
+                </thead>
+                <tbody id="modalContent" class="text-sm">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    const inventoryData = {
+        'Laptops': [
+            {id: 'LT001', name: 'MacBook Pro', qty: 15, storage: '512GB', grade: 'A', battery: '95%'},
+            {id: 'LT002', name: 'Dell XPS', qty: 8, storage: '1TB', grade: 'B', battery: '88%'}
+        ],
+        'Smartphones': [
+            {id: 'PH001', name: 'iPhone 15', qty: 50, storage: '256GB', grade: 'A+', battery: '100%'}
+        ],
+        'Tablets': [
+            {id: 'TB001', name: 'iPad Air', qty: 22, storage: '128GB', grade: 'A', battery: '92%'}
+        ]
+    };
+
+    function openModal(category) {
+        document.getElementById('modalTitle').innerText = category + " Inventory";
+        const tbody = document.getElementById('modalContent');
+        tbody.innerHTML = '';
+        
+        inventoryData[category].forEach(item => {
+            tbody.innerHTML += `<tr>
+                <td class="p-3 border">${item.id}</td>
+                <td class="p-3 border">${item.name}</td>
+                <td class="p-3 border">${item.qty}</td>
+                <td class="p-3 border">${item.storage}</td>
+                <td class="p-3 border">${item.grade}</td>
+                <td class="p-3 border">${item.battery}</td>
+            </tr>`;
+        });
+        document.getElementById('productModal').classList.remove('hidden');
+        document.getElementById('productModal').classList.add('flex');
+    }
+
+    function closeModal() {
+        document.getElementById('productModal').classList.add('hidden');
+        document.getElementById('productModal').classList.remove('flex');
+    }
+</script>
 
     <!-- Certifications -->
     <section id="certifications" class="py-20 bg-white scroll-reveal">
