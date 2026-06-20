@@ -231,5 +231,57 @@
         });
         document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
     </script>
+    <script>
+    // تم تحديث البيانات بناءً على ملفات المخزون المرفقة
+    const inventoryData = {
+        'Laptops': [
+            {id: 'LT-001', name: 'MacBook Pro 14"', qty: 5, storage: '512GB', grade: 'A', battery: '98%'},
+            {id: 'LT-002', name: 'Dell Latitude 7420', qty: 12, storage: '256GB', grade: 'B', battery: '85%'}
+        ],
+        'Smartphones': [
+            {id: 'IP17-001', name: 'iPhone 17 Pro Max 256GB', qty: 15, storage: '256GB', grade: 'New', battery: '100%'},
+            {id: 'IP17-002', name: 'iPhone 17 256GB', qty: 8, storage: '256GB', grade: 'New', battery: '100%'},
+            {id: 'IP16-001', name: 'iPhone 16 Pro Max 256GB', qty: 22, storage: '256GB', grade: 'A', battery: '95%'},
+            {id: 'IP16-002', name: 'iPhone 16 128GB', qty: 10, storage: '128GB', grade: 'A', battery: '92%'},
+            {id: 'IP15-001', name: 'iPhone 15 128GB', qty: 14, storage: '128GB', grade: 'B', battery: '88%'},
+            {id: 'IP14-001', name: 'iPhone 14 Pro 128GB', qty: 5, storage: '128GB', grade: 'Used', battery: '82%'},
+            {id: 'IP13-001', name: 'iPhone 13 128GB', qty: 25, storage: '128GB', grade: 'Used', battery: '80%'},
+            {id: 'IP12-001', name: 'iPhone 12 Mini 64GB', qty: 40, storage: '64GB', grade: 'Used', battery: '78%'}
+        ],
+        'Tablets': [
+            {id: 'TB-001', name: 'iPad Pro 11"', qty: 10, storage: '256GB', grade: 'A', battery: '94%'},
+            {id: 'TB-002', name: 'iPad Air 5th Gen', qty: 7, storage: '64GB', grade: 'A', battery: '90%'}
+        ]
+    };
+
+    function openModal(category) {
+        document.getElementById('modalTitle').innerText = category + " Inventory";
+        const tbody = document.getElementById('modalContent');
+        tbody.innerHTML = '';
+        
+        inventoryData[category].forEach(item => {
+            tbody.innerHTML += `
+                <tr class="border-b hover:bg-slate-50">
+                    <td class="p-3">${item.id}</td>
+                    <td class="p-3 font-medium">${item.name}</td>
+                    <td class="p-3">${item.qty}</td>
+                    <td class="p-3">${item.storage}</td>
+                    <td class="p-3">
+                        <span class="px-2 py-1 rounded-full text-xs ${item.grade === 'New' ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-800'}">
+                            ${item.grade}
+                        </span>
+                    </td>
+                    <td class="p-3">${item.battery}</td>
+                </tr>`;
+        });
+        document.getElementById('productModal').classList.remove('hidden');
+        document.getElementById('productModal').classList.add('flex');
+    }
+
+    function closeModal() {
+        document.getElementById('productModal').classList.add('hidden');
+        document.getElementById('productModal').classList.remove('flex');
+    }
+</script>
 </body>
 </html>
