@@ -44,13 +44,11 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Animation -->
+    <!-- Hero Section -->
     <section class="relative py-20 md:py-32 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-slate-900/80 z-10"></div>
-            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000" 
-                 alt="Tech Background" 
-                 class="w-full h-full object-cover animate-slow-zoom">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000" alt="Tech Background" class="w-full h-full object-cover animate-slow-zoom">
         </div>
         <div class="relative z-20 max-w-7xl mx-auto px-6 text-center">
             <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-white tracking-tight">
@@ -60,100 +58,71 @@
             <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto mb-10">
                 The premier certified circular marketplace and refurbishment network. We bridge the gap between premium quality and global sustainability.
             </p>
-            <a href="#products" class="inline-block bg-emerald-600 text-white font-bold px-8 py-4 rounded-full hover:bg-emerald-500 transition shadow-lg hover:shadow-emerald-500/20">
+            <a href="#products" class="inline-block bg-emerald-600 text-white font-bold px-8 py-4 rounded-full hover:bg-emerald-500 transition shadow-lg">
                 Explore Our Products
             </a>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-emerald-600 font-bold mb-2 tracking-widest text-sm">WHO WE ARE</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold mb-6 text-slate-900">Based in the Heart of Innovation</h3>
-                <p class="text-slate-600 leading-relaxed text-lg">
-                    ReLoop by AfandiTech is a specialized Free Zone company located in Dubai Silicon Oasis, UAE. We are a premier player in the e-commerce sector, dedicated to the professional procurement, refurbishment, and distribution of high-quality pre-owned computers and smartphones.
-                </p>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-emerald-50 border border-emerald-100 p-8 rounded-3xl text-emerald-900">
-                    <i class="fa-solid fa-location-dot text-4xl mb-4 text-emerald-600"></i>
-                    <p class="font-bold text-lg">Dubai Silicon Oasis</p>
-                </div>
-                <div class="bg-slate-900 p-8 rounded-3xl text-white">
-                    <i class="fa-solid fa-laptop-medical text-4xl mb-4 text-emerald-400"></i>
-                    <p class="font-bold text-lg">Certified Tech</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products & Metrics -->
-    <section id="products" class="py-20 bg-slate-50">
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-emerald-600 font-bold mb-2 tracking-widest text-sm">INVENTORY & DATA</h2>
-                <h3 class="text-3xl font-extrabold text-slate-900">Performance Metrics</h3>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-16 items-start">
-                <div class="space-y-6">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                        <div class="flex justify-between mb-2 font-semibold text-sm"><span>Laptops & Workstations</span><span>85% Capacity</span></div>
-                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-emerald-600 w-[85%]"></div></div>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                        <div class="flex justify-between mb-2 font-semibold text-sm"><span>Mobile Phones</span><span>92% Capacity</span></div>
-                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-emerald-600 w-[92%]"></div></div>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                        <div class="flex justify-between mb-2 font-semibold text-sm"><span>Earbuds & Wearables</span><span>65% Capacity</span></div>
-                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-emerald-600 w-[65%]"></div></div>
-                    </div>
+            <h2 class="text-sm font-bold text-emerald-600 tracking-widest uppercase mb-2 text-center">Inventory</h2>
+            <h3 class="text-4xl font-extrabold text-center mb-16">Premium Refurbished Selection</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition">
+                    <i class="fa-solid fa-laptop text-4xl text-emerald-600 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Computers & Workstations</h4>
+                    <p class="text-slate-600">Certified pre-owned laptops and desktops optimized for professional performance.</p>
                 </div>
-
-                <div class="bg-slate-900 p-10 rounded-3xl text-white shadow-xl">
-                    <h3 class="text-2xl font-bold mb-4">Battery Health Policy</h3>
-                    <p class="text-slate-400 mb-6">Our "Minimum 85% Health" standard ensures every device meets OEM performance metrics.</p>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Certified 85%+ Capacity Testing</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Eco-Safe Recycling</li>
-                    </ul>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition">
+                    <i class="fa-solid fa-mobile-screen-button text-4xl text-emerald-600 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Smartphones</h4>
+                    <p class="text-slate-600">Strictly tested, unlocked flagship devices available at competitive pricing.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition">
+                    <i class="fa-solid fa-tablet-screen-button text-4xl text-emerald-600 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Tablets & Accessories</h4>
+                    <p class="text-slate-600">Quality-assured tablets for business, education, and personal daily use.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Roadmap -->
-    <section id="roadmap" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-5xl mx-auto px-6">
-            <h3 class="text-3xl font-extrabold text-center mb-16">Milestones & Strategic Growth</h3>
-            <div class="space-y-8">
-                <div class="grid md:grid-cols-4 gap-4 items-center">
-                    <div class="font-bold text-emerald-400">May 2025</div>
-                    <div class="md:col-span-3 bg-slate-800 p-6 rounded-2xl">Operational Foundation & Trade Licenses</div>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-sm font-bold text-emerald-400 tracking-widest uppercase mb-2 text-center">Services</h2>
+            <h3 class="text-4xl font-extrabold text-center mb-16">Lifecycle Management</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+                    <i class="fa-solid fa-microchip text-3xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Refurbishment</h4>
+                    <p class="text-sm text-slate-400">Rigorous diagnostic testing and restoration.</p>
                 </div>
-                <div class="grid md:grid-cols-4 gap-4 items-center">
-                    <div class="font-bold text-emerald-400">June 2025</div>
-                    <div class="md:col-span-3 bg-slate-800 p-6 rounded-2xl">Logistics: FedEx, Jeebly, EMX Integration</div>
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+                    <i class="fa-solid fa-boxes-packing text-3xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Distribution</h4>
+                    <p class="text-sm text-slate-400">Wholesale supply for B2B global markets.</p>
                 </div>
-                <div class="grid md:grid-cols-4 gap-4 items-center">
-                    <div class="font-bold text-emerald-400">August 2025</div>
-                    <div class="md:col-span-3 bg-slate-800 p-6 rounded-2xl">First Global Procurement from USA</div>
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+                    <i class="fa-solid fa-shield-halved text-3xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Data Security</h4>
+                    <p class="text-sm text-slate-400">Military-grade sanitization protocols.</p>
                 </div>
-                <div class="grid md:grid-cols-4 gap-4 items-center">
-                    <div class="font-bold text-emerald-400">Sept 2025</div>
-                    <div class="md:col-span-3 bg-slate-800 p-6 rounded-2xl">B2B/B2C Launch (Tabby Integration)</div>
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+                    <i class="fa-solid fa-earth-americas text-3xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Global Logistics</h4>
+                    <p class="text-sm text-slate-400">Secure shipping from our UAE hub.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Footer -->
     <section id="contact" class="py-20 bg-slate-50 text-center">
         <h2 class="text-3xl font-bold mb-8">Ready to Partner?</h2>
-        <a href="https://wa.me/971521329732" class="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold">Contact us on WhatsApp</a>
+        <a href="https://wa.me/971521329732" class="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-700 transition">Contact us on WhatsApp</a>
     </section>
 
 </body>
