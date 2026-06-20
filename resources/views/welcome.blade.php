@@ -1,0 +1,113 @@
+@extends('layouts.app')
+
+@section('content')
+    <!-- Hero Section -->
+    <section class="relative py-32 overflow-hidden animate-fade-in">
+        <div class="absolute inset-0 bg-slate-900/80 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover animate-slow-zoom">
+        <div class="relative z-20 max-w-7xl mx-auto px-6 text-center text-white">
+            <h1 class="text-6xl font-extrabold mb-6">Giving Technology <span class="text-emerald-400">A Second Life</span></h1>
+            <p class="text-xl text-slate-200 max-w-2xl mx-auto mb-10">Mahmoud Afandi Technology FZCO - 2025/2026</p>
+            <a href="#products" class="bg-emerald-600 px-8 py-4 rounded-full font-bold hover:bg-emerald-500 transition">Explore Products</a>
+        </div>
+    </section>
+
+    <!-- About & Vision Section -->
+    <section id="about" class="py-20 bg-white scroll-reveal">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-2">Who We Are</h2>
+                <h3 class="text-4xl font-extrabold mb-6">Innovation from Dubai Silicon Oasis</h3>
+                <p class="text-slate-600 text-lg">ReLoop by AfandiTech specializes in the professional procurement, refurbishment, and distribution of high-quality electronics, bridging the gap between premium performance and global sustainability.</p>
+            </div>
+            <div id="vision" class="bg-slate-900 p-10 rounded-3xl text-white transform hover:scale-105 transition-transform duration-500">
+                <h2 class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-2">Our Vision</h2>
+                <h3 class="text-3xl font-extrabold mb-6">Redefining Tech Lifecycles</h3>
+                <p class="text-slate-400">To lead the circular economy by providing accessible, reliable, and sustainable technological solutions to the global market.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <!-- Products Section -->
+<section id="products" class="py-20 bg-slate-50 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-extrabold mb-16">Our Products</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- PC Product -->
+            <div class="bg-white rounded-3xl border overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 cursor-pointer">
+                <img src="{{ asset('images/pc.jpg') }}" alt="PC" class="w-full h-48 object-cover">
+                <div class="p-8">
+                    <h4 class="text-xl font-bold">Laptops & Workstations</h4>
+                </div>
+            </div>
+
+            <!-- Mobile Product -->
+            <div class="bg-white rounded-3xl border overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 cursor-pointer">
+                <img src="{{ asset('images/mobilephones.jpeg') }}" alt="Smartphones" class="w-full h-48 object-cover">
+                <div class="p-8">
+                    <h4 class="text-xl font-bold">Smartphones</h4>
+                </div>
+            </div>
+
+            <!-- Tablet Product -->
+            <div class="bg-white rounded-3xl border overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 cursor-pointer">
+                <img src="{{ asset('images/tabblet.jpeg') }}" alt="Tablets" class="w-full h-48 object-cover">
+                <div class="p-8">
+                    <h4 class="text-xl font-bold">Tablets & Gadgets</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white scroll-reveal">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold mb-16">Core Services</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                @foreach(['Refurbishment', 'Logistics', 'Data Security', 'Distribution'] as $service)
+                <div class="p-6 hover:bg-emerald-50 rounded-2xl transition-colors">
+                    <i class="fa-solid {{ $loop->first ? 'fa-microchip' : ($loop->index == 1 ? 'fa-truck' : ($loop->index == 2 ? 'fa-lock' : 'fa-globe')) }} text-3xl text-emerald-600 mb-4"></i>
+                    <h4 class="font-bold">{{ $service }}</h4>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Roadmap -->
+    <section id="investor-roadmap" class="py-20 bg-slate-900 text-white scroll-reveal">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4">Growth Strategy</h2>
+            <h3 class="text-4xl font-extrabold mb-12">Post-Funding Equity Structure</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+                    <h4 class="text-xl font-bold mb-4">Founders (Mahmoud & John)</h4>
+                    <span class="text-5xl font-black text-emerald-400">60%</span>
+                </div>
+                <div class="bg-emerald-600 p-8 rounded-3xl shadow-xl">
+                    <h4 class="text-xl font-bold mb-4">New Investors</h4>
+                    <span class="text-5xl font-black text-white">40%</span>
+                </div>
+            </div>
+            <p class="mt-12 text-slate-400 max-w-2xl mx-auto">
+                We are opening 40% equity to strategic investors to accelerate our global footprint and enhance our refurbishment infrastructure.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate-fade-in-up'); });
+        });
+        document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+    </script>
+    <style>
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .animate-fade-in-up { opacity: 1; transform: translateY(0); }
+    </style>
+@endsection
