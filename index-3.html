@@ -31,7 +31,7 @@
         header {
             background: var(--primary);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,40 +40,50 @@
             z-index: 1000;
             border-bottom: 3px solid var(--accent);
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            flex-wrap: wrap;
-            gap: 1rem;
         }
         .logo-area h1 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: white;
             letter-spacing: 0.5px;
         }
         .logo-area span {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #94a3b8;
             display: block;
         }
+        /* Navigation Styles */
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1rem;
-            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
         }
         nav a {
             color: #cbd5e1;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            padding: 0.5rem 0.75rem;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.6rem;
             border-radius: 4px;
             transition: all 0.3s ease;
             cursor: pointer;
+            white-space: nowrap;
         }
         nav a:hover, nav a.active {
             color: white;
             background-color: rgba(16, 185, 129, 0.2);
             border-bottom: 2px solid var(--accent);
         }
+        /* Mobile Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         .container {
             max-width: 1200px;
             width: 100%;
@@ -141,7 +151,7 @@
         }
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
@@ -164,7 +174,7 @@
         }
         .placeholder-img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             background-color: #e2e8f0;
             display: flex;
             align-items: center;
@@ -176,6 +186,7 @@
             border: 2px dashed #cbd5e1;
             text-align: center;
             padding: 1rem;
+            font-size: 0.9rem;
         }
         .device-spec-box {
             background: #f1f5f9;
@@ -201,6 +212,30 @@
         .device-spec-box li strong {
             color: var(--primary);
         }
+        .partners-bar {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .partner-tag {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #475569;
+            padding: 0.5rem 1rem;
+            background: #f1f5f9;
+            border-radius: 6px;
+        }
         .funding-card {
             max-width: 800px;
             margin: 0 auto;
@@ -222,13 +257,58 @@
             background: var(--primary);
             color: #94a3b8;
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 1rem;
             margin-top: 4rem;
             border-top: 1px solid #334155;
         }
         footer p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-size: 0.9rem;
+        }
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+        .footer-icons span {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .footer-icons span:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Mobile Drawer Styling */
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav {
+                display: none;
+                width: 100%;
+                background: #1e293b;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 1rem;
+                border-bottom: 3px solid var(--accent);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+            }
+            nav.mobile-open {
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+            nav a {
+                padding: 0.75rem 1rem;
+                text-align: left;
+                display: block;
+            }
         }
     </style>
 </head>
@@ -239,13 +319,15 @@
             <h1>ReloopTech</h1>
             <span>Afandi Technology FZCO</span>
         </div>
-        <nav>
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        <nav id="main-nav">
             <ul>
                 <li><a onclick="switchPage('home')" class="active" id="nav-home">Home</a></li>
-                <li><a onclick="switchPage('products')" id="nav-products">Products & Transparency</a></li>
-                <li><a onclick="switchPage('recommerce')" id="nav-recommerce">Re-commerce & BuyBack</a></li>
+                <li><a onclick="switchPage('products')" id="nav-products">Products</a></li>
+                <li><a onclick="switchPage('tech')" id="nav-tech">Technology & AI</a></li>
+                <li><a onclick="switchPage('recommerce')" id="nav-recommerce">Re-commerce</a></li>
                 <li><a onclick="switchPage('certifications')" id="nav-certifications">Certifications</a></li>
-                <li><a onclick="switchPage('warranty')" id="nav-warranty">Digital Warranty</a></li>
+                <li><a onclick="switchPage('warranty')" id="nav-warranty">Warranty & QR</a></li>
                 <li><a onclick="switchPage('funding')" id="nav-funding">Funding ($150k)</a></li>
             </ul>
         </nav>
@@ -256,67 +338,116 @@
         <!-- HOME PAGE -->
         <section id="page-home" class="page-section active">
             <div class="hero">
-                <h2>The Future of Global Electronics Re-commerce</h2>
-                <p>Operated by <strong>Afandi Technology FZCO</strong> (Dubai), we are scaling to become the world's largest trusted marketplace for certified refurbished premium tech, driving the circular economy from the Middle East to emerging markets globally.</p>
-                <button class="btn" onclick="switchPage('products')">Explore Inventory & Transparency</button>
+                <h2>The Ultimate Global Electronics Re-commerce Ecosystem</h2>
+                <p>Operated by <strong>Afandi Technology FZCO</strong> (Dubai), scaling to become the world's largest marketplace for certified refurbished premium technology.</p>
+                <button class="btn" onclick="switchPage('products')">Explore Our Full Device Ecosystem</button>
             </div>
             
             <div class="grid-3">
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Warehouse & Stock ]</div>
+                    <div class="placeholder-img">[ Warehouse & Stock Preview ]</div>
                     <h3>Asset-Light Scalability</h3>
                     <p>Sourced from prime U.S. channels, fully optimized in Dubai, and deployed directly to high-demand retail and enterprise markets.</p>
                 </div>
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: AI Ecosystem ]</div>
+                    <div class="placeholder-img">[ AI Platform Preview ]</div>
                     <h3>AI-Powered Intelligence</h3>
                     <p>Advanced algorithmic pricing, automated hardware grading, and lightning-fast logistics tracking systems.</p>
                 </div>
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Sustainability ]</div>
+                    <div class="placeholder-img">[ Eco-Warehouse Preview ]</div>
                     <h3>Green Tech Commitment</h3>
                     <p>Pioneering eco-friendly warehousing practices and achieving top-tier international environmental standards.</p>
                 </div>
             </div>
+
+            <!-- Partners & Payment Gateways Bar -->
+            <div class="partners-bar">
+                <p style="color: #64748b; font-weight: 600; font-size: 0.95rem;">Trusted Payment & Logistics Partners</p>
+                <div class="partners-logos">
+                    <div class="partner-tag">Tabby</div>
+                    <div class="partner-tag">Tamara</div>
+                    <div class="partner-tag">Jeebly Logistics</div>
+                    <div class="partner-tag">FedEx Express</div>
+                </div>
+            </div>
         </section>
 
-        <!-- PRODUCTS & ABSOLUTE TRANSPARENCY PAGE -->
+        <!-- PRODUCTS PAGE (Featuring all required categories with lifecycle details) -->
         <section id="page-products" class="page-section">
-            <h2 class="section-title">The Ultimate Marketplace: Complete Device Transparency</h2>
-            <p class="section-desc">At ReloopTech, we redefine trust. Every single device includes a complete historical breakdown from day one to ensure full customer confidence.</p>
+            <h2 class="section-title">The Ultimate Device Marketplace</h2>
+            <p class="section-desc">Full lifecycle transparency for every item: Release date, first activation, age, battery health, display specs, RAM, and storage.</p>
             
             <div class="grid-3">
-                <!-- Product 1 -->
+                <!-- Desktop PC -->
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Pro Laptop ]</div>
-                    <h3>Pro-Grade Enterprise Laptop</h3>
+                    <div class="placeholder-img">[ Desktop PC Image ]</div>
+                    <h3>Enterprise Desktop Tower</h3>
+                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $520 (Like-New)</p>
+                    <div class="device-spec-box">
+                        <strong>Lifecycle & Specs:</strong>
+                        <ul>
+                            <li><span>Release Date:</span> <strong>Q2 2023</strong></li>
+                            <li><span>First Activation:</span> <strong>Nov 2023</strong></li>
+                            <li><span>Device Age:</span> <strong>2 Years 7 Months</strong></li>
+                            <li><span>Component Status:</span> <strong>100% Benchmarked</strong></li>
+                            <li><span>Form Factor:</span> <strong>Tower Workstation</strong></li>
+                            <li><span>Processor:</span> <strong>Intel Core i7 Gen 13</strong></li>
+                            <li><span>RAM Memory:</span> <strong>32GB DDR5</strong></li>
+                            <li><span>Storage Space:</span> <strong>1TB NVMe SSD</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AiO Computer -->
+                <div class="card">
+                    <div class="placeholder-img">[ AiO Computer Image ]</div>
+                    <h3>All-in-One (AiO) Workstation</h3>
+                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $650 (Like-New)</p>
+                    <div class="device-spec-box">
+                        <strong>Lifecycle & Specs:</strong>
+                        <ul>
+                            <li><span>Release Date:</span> <strong>Q4 2023</strong></li>
+                            <li><span>First Activation:</span> <strong>Feb 2024</strong></li>
+                            <li><span>Device Age:</span> <strong>2 Years 4 Months</strong></li>
+                            <li><span>Screen Size:</span> <strong>27-inch 4K</strong></li>
+                            <li><span>Screen Type:</span> <strong>IPS Retina Display</strong></li>
+                            <li><span>Processor:</span> <strong>Apple M3 / Intel i7</strong></li>
+                            <li><span>RAM Memory:</span> <strong>16GB Unified</strong></li>
+                            <li><span>Storage Space:</span> <strong>512GB SSD</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Laptop -->
+                <div class="card">
+                    <div class="placeholder-img">[ Laptop Image ]</div>
+                    <h3>Pro-Grade Laptop</h3>
                     <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $450 (Like-New)</p>
                     <div class="device-spec-box">
-                        <strong>Lifecycle & Specifications:</strong>
+                        <strong>Lifecycle & Specs:</strong>
                         <ul>
                             <li><span>Release Date:</span> <strong>Q3 2023</strong></li>
                             <li><span>First Activation:</span> <strong>Jan 2024</strong></li>
-                            <li><span>Device Age:</span> <strong>2 Years 6 Months</strong></li>
                             <li><span>Battery Health:</span> <strong>92% (Original)</strong></li>
                             <li><span>Screen Size:</span> <strong>14-inch</strong></li>
                             <li><span>Screen Type:</span> <strong>Retina IPS LCD</strong></li>
-                            <li><span>RAM Memory:</span> <strong>16GB Unified</strong></li>
+                            <li><span>RAM Memory:</span> <strong>16GB</strong></li>
                             <li><span>Storage Space:</span> <strong>512GB NVMe SSD</strong></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Product 2 -->
+                <!-- Mobile Phone -->
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Smartphone ]</div>
+                    <div class="placeholder-img">[ Smartphone Image ]</div>
                     <h3>Flagship Smart Device</h3>
                     <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $380 (Like-New)</p>
                     <div class="device-spec-box">
-                        <strong>Lifecycle & Specifications:</strong>
+                        <strong>Lifecycle & Specs:</strong>
                         <ul>
                             <li><span>Release Date:</span> <strong>Q4 2023</strong></li>
                             <li><span>First Activation:</span> <strong>Mar 2024</strong></li>
-                            <li><span>Device Age:</span> <strong>2 Years 3 Months</strong></li>
                             <li><span>Battery Health:</span> <strong>95% Original</strong></li>
                             <li><span>Screen Size:</span> <strong>6.1-inch</strong></li>
                             <li><span>Screen Type:</span> <strong>Super OLED Pro</strong></li>
@@ -326,17 +457,16 @@
                     </div>
                 </div>
 
-                <!-- Product 3 -->
+                <!-- Tablet -->
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Creator Tablet ]</div>
+                    <div class="placeholder-img">[ Tablet Image ]</div>
                     <h3>Performance Creator Tablet</h3>
                     <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $310 (Like-New)</p>
                     <div class="device-spec-box">
-                        <strong>Lifecycle & Specifications:</strong>
+                        <strong>Lifecycle & Specs:</strong>
                         <ul>
                             <li><span>Release Date:</span> <strong>Q2 2023</strong></li>
                             <li><span>First Activation:</span> <strong>Aug 2023</strong></li>
-                            <li><span>Device Age:</span> <strong>3 Years</strong></li>
                             <li><span>Battery Health:</span> <strong>89% Original</strong></li>
                             <li><span>Screen Size:</span> <strong>11-inch</strong></li>
                             <li><span>Screen Type:</span> <strong>Liquid Retina</strong></li>
@@ -345,27 +475,70 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- Audio / Earbuds -->
+                <div class="card">
+                    <div class="placeholder-img">[ Audio / Earbuds Image ]</div>
+                    <h3>Original Certified Audio Gear</h3>
+                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $150 (Like-New)</p>
+                    <div class="device-spec-box">
+                        <strong>Lifecycle & Specs:</strong>
+                        <ul>
+                            <li><span>Release Date:</span> <strong>Q1 2024</strong></li>
+                            <li><span>First Activation:</span> <strong>May 2024</strong></li>
+                            <li><span>Battery Health:</span> <strong>98% Retained</strong></li>
+                            <li><span>Driver Type:</span> <strong>Custom High-Excursion</strong></li>
+                            <li><span>Connectivity:</span> <strong>Bluetooth 5.3</strong></li>
+                            <li><span>Acoustics:</span> <strong>Active Noise Cancellation</strong></li>
+                            <li><span>Case Battery:</span> <strong>Full 24h Cycle</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGY & AI PAGE -->
+        <section id="page-tech" class="page-section">
+            <h2 class="section-title">Core Technology Stack & AI Integration</h2>
+            <p class="section-desc">How ReloopTech leverages modern software architecture to scale the re-commerce industry.</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="placeholder-img">[ Dynamic Pricing AI ]</div>
+                    <h3>AI Dynamic Pricing Engine</h3>
+                    <p>Machine learning models that analyze U.S. auction histories and regional demand curves to optimize buying and selling prices automatically.</p>
+                </div>
+                <div class="card">
+                    <div class="placeholder-img">[ Computer Vision Grading ]</div>
+                    <h3>Automated Computer Vision Grading</h3>
+                    <p>AI-driven image recognition tools that rapidly scan device conditions upon arrival in Dubai, slashing manual inspection time.</p>
+                </div>
+                <div class="card">
+                    <div class="placeholder-img">[ WMS Architecture ]</div>
+                    <h3>Smart WMS & Omnichannel Hub</h3>
+                    <p>Integrated cloud logistics tracking from auction acquisition to end-user delivery via partners like FedEx and Jeebly.</p>
+                </div>
             </div>
         </section>
 
         <!-- RE-COMMERCE & BUYBACK PAGE -->
         <section id="page-recommerce" class="page-section">
             <h2 class="section-title">Re-commerce & BuyBack Program</h2>
-            <p class="section-desc">Our proprietary circular ecosystem allows enterprises and retail consumers to seamlessly trade in, upgrade, or recycle their old tech assets.</p>
+            <p class="section-desc">Our circular ecosystem allows enterprises and retail consumers to seamlessly trade in or recycle tech assets.</p>
             
             <div class="grid-3">
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: BuyBack Flow ]</div>
+                    <div class="placeholder-img">[ BuyBack Flow ]</div>
                     <h3>Instant Trade-In Evaluation</h3>
                     <p>Users evaluate their devices digitally, generating instant buyback valuations backed by our AI pricing platform.</p>
                 </div>
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: B2B Processing ]</div>
+                    <div class="placeholder-img">[ B2B Processing ]</div>
                     <h3>Institutional Asset Recovery</h3>
                     <p>Managing mass hardware retirement from government bodies and large corporations securely in Dubai.</p>
                 </div>
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Circular Loop ]</div>
+                    <div class="placeholder-img">[ Zero E-Waste ]</div>
                     <h3>Zero E-Waste Mission</h3>
                     <p>Ensuring every non-reusable component is ethically recycled under strict environmental compliance protocols.</p>
                 </div>
@@ -379,43 +552,43 @@
             
             <div class="grid-3">
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: ISO / R2 Badge ]</div>
+                    <div class="placeholder-img">[ ISO / R2 Badge ]</div>
                     <h3>Quality & Refurbishment ISO</h3>
                     <p>Adherence to global standards for testing, grading, data wiping, and hardware restoration processes.</p>
                 </div>
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Eco-Compliance ]</div>
+                    <div class="placeholder-img">[ Eco-Compliance ]</div>
                     <h3>Eco-Warehouse Compliance</h3>
                     <p>Building specialized operations designed to minimize carbon output and electronic waste streams.</p>
                 </div>
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Data Security ISO ]</div>
+                    <div class="placeholder-img">[ Data Security ISO ]</div>
                     <h3>Secure Data Sanitization</h3>
                     <p>Military-grade data destruction certificates provided for all corporate and institutional hardware purchases.</p>
                 </div>
             </div>
         </section>
 
-        <!-- DIGITAL WARRANTY PAGE -->
+        <!-- DIGITAL WARRANTY & QR PAGE -->
         <section id="page-warranty" class="page-section">
-            <h2 class="section-title">Digital Warranty & Traceability System</h2>
-            <p class="section-desc">No more paper receipts. Every device sold by ReloopTech is stamped with a unique secure digital passport and real warranty terms.</p>
+            <h2 class="section-title">Digital Warranty & Instant QR Passport</h2>
+            <p class="section-desc">No more manual serial number typing or lost paper receipts.</p>
             
             <div class="grid-3">
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Digital Badge ]</div>
-                    <h3>Blockchain-Ready Digital Passport</h3>
-                    <p>Instant tracking of serial numbers, history logs, repair records, and active warranty status directly from user smartphones.</p>
+                    <div class="placeholder-img">[ QR Code Scanner Concept ]</div>
+                    <h3>Instant Camera QR Verification</h3>
+                    <p>Every device features a unique laser-etched or digital QR code. Simply scan it with any smartphone camera to instantly retrieve the complete warranty status, lifecycle log, and hardware specifications without typing any serial numbers!</p>
                 </div>
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Support Portal ]</div>
-                    <h3>Instant Claims & Support</h3>
-                    <p>Automated ticketing system ensuring rapid turnaround or device replacement under our real warranty commitment.</p>
+                    <div class="placeholder-img">[ Blockchain Passport ]</div>
+                    <h3>Secure Digital Passport</h3>
+                    <p>Cloud-backed tamper-proof tracking of repair logs, authenticity checks, and active warranty terms.</p>
                 </div>
                 <div class="card">
-                    <div class="placeholder-img">[ Image Placeholder: Lifecycle History ]</div>
-                    <h3>Full Traceability Log</h3>
-                    <p>Complete visibility for buyers regarding prior checks, performance audits, and components verification.</p>
+                    <div class="placeholder-img">[ Automated Support ]</div>
+                    <h3>Fast-Track Claims Support</h3>
+                    <p>One-tap ticket creation through the scanned QR profile to guarantee rapid replacement or technical assistance.</p>
                 </div>
             </div>
         </section>
@@ -443,9 +616,21 @@
     <footer>
         <p>&copy; 2026 Afandi Technology FZCO (ReloopTech). All Rights Reserved.</p>
         <p>Dubai, United Arab Emirates | Smarter Tech, Greener Future.</p>
+        <div class="footer-icons">
+            <span title="Global Logistics">🌍</span>
+            <span title="Secure Payments">💳</span>
+            <span title="Eco-Friendly">🌱</span>
+            <span title="AI Powered">🤖</span>
+            <span title="Verified Warranty">🛡️</span>
+        </div>
     </footer>
 
     <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('mobile-open');
+        }
+
         function switchPage(pageId) {
             // Hide all sections
             const sections = document.querySelectorAll('.page-section');
@@ -460,6 +645,10 @@
             
             // Highlight nav link
             document.getElementById('nav-' + pageId).classList.add('active');
+
+            // Close mobile menu if open
+            const nav = document.getElementById('main-nav');
+            nav.classList.remove('mobile-open');
 
             // Scroll smoothly to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
