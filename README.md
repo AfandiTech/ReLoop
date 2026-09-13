@@ -49,4 +49,4 @@ We are currently in our **Extended Seed Funding Round**. We welcome strategic pa
 
 *For investment inquiries, please reach out via our official corporate communication channels.*
 
-https://www.linkedin.com/in/imahmoudsharkawy
+https://www.linkedin.com/company/afanditechnology-fzco/
