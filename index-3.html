@@ -1,659 +1,343 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReloopTech | Afandi Technology FZCO - The Ultimate Re-commerce Ecosystem</title>
+    <title>ResellTech - تجديد وبيع الأجهزة الإلكترونية والضمان الحقيقي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --primary: #0f172a;
-            --secondary: #059669;
-            --accent: #10b981;
-            --bg-light: #f8fafc;
-            --text-main: #334155;
-            --border-color: #e2e8f0;
-            --card-bg: #ffffff;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
         body {
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            margin: 0;
+            background-color: #030712;
+            color: #f3f4f6;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
         }
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
+        #webgl-container {
+            position: fixed;
             top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--accent);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
         }
-        .logo-area h1 {
-            font-size: 1.4rem;
-            color: white;
-            letter-spacing: 0.5px;
+        .glass-card {
+            background: rgba(30, 41, 59, 0.3);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.4s ease;
         }
-        .logo-area span {
-            font-size: 0.7rem;
-            color: #94a3b8;
-            display: block;
-        }
-        /* Navigation Styles */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 0.75rem;
-            align-items: center;
-        }
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.4rem 0.6rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        nav a:hover, nav a.active {
-            color: white;
-            background-color: rgba(16, 185, 129, 0.2);
-            border-bottom: 2px solid var(--accent);
-        }
-        /* Mobile Menu Toggle Button */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            flex: 1;
-        }
-        .page-section {
-            display: none;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        .page-section.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .hero {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
-        .hero h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: #f8fafc;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-        }
-        .btn {
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .btn:hover {
-            background-color: var(--accent);
-        }
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        .section-desc {
-            color: #64748b;
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
-        }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
-        }
-        .card h3 {
-            margin-bottom: 0.75rem;
-            color: var(--primary);
-            font-size: 1.25rem;
-        }
-        .placeholder-img {
-            width: 100%;
-            height: 180px;
-            background-color: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #475569;
-            font-weight: 600;
-            border-radius: 6px;
-            margin-bottom: 1rem;
-            border: 2px dashed #cbd5e1;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-        }
-        .device-spec-box {
-            background: #f1f5f9;
-            padding: 1rem;
-            border-radius: 6px;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            border-left: 4px solid var(--secondary);
-        }
-        .device-spec-box ul {
-            list-style: none;
-            margin-top: 0.5rem;
-        }
-        .device-spec-box li {
-            padding: 4px 0;
-            border-bottom: 1px dashed #cbd5f0;
-            display: flex;
-            justify-content: space-between;
-        }
-        .device-spec-box li span {
-            color: #475569;
-        }
-        .device-spec-box li strong {
-            color: var(--primary);
-        }
-        .partners-bar {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-top: 3rem;
-            text-align: center;
-        }
-        .partners-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-        .partner-tag {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #475569;
-            padding: 0.5rem 1rem;
-            background: #f1f5f9;
-            border-radius: 6px;
-        }
-        .funding-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .funding-list {
-            margin: 1.5rem 0;
-            padding-left: 1.5rem;
-            line-height: 1.8;
-        }
-        .funding-list li {
-            margin-bottom: 0.75rem;
-        }
-        footer {
-            background: var(--primary);
-            color: #94a3b8;
-            text-align: center;
-            padding: 2.5rem 1rem;
-            margin-top: 4rem;
-            border-top: 1px solid #334155;
-        }
-        footer p {
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
-        }
-        .footer-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-            font-size: 1.2rem;
-        }
-        .footer-icons span {
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        .footer-icons span:hover {
-            color: var(--accent);
-        }
-
-        /* Responsive Mobile Drawer Styling */
-        @media (max-width: 900px) {
-            .menu-toggle {
-                display: block;
-            }
-            nav {
-                display: none;
-                width: 100%;
-                background: #1e293b;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                padding: 1rem;
-                border-bottom: 3px solid var(--accent);
-                box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-            }
-            nav.mobile-open {
-                display: block;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.5rem;
-            }
-            nav a {
-                padding: 0.75rem 1rem;
-                text-align: left;
-                display: block;
-            }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+            transform: translateY(-5px);
         }
     </style>
 </head>
-<body>
+<body class="selection:bg-blue-500 selection:text-black">
 
-    <header>
-        <div class="logo-area">
-            <h1>ReloopTech</h1>
-            <span>Afandi Technology FZCO</span>
-        </div>
-        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        <nav id="main-nav">
-            <ul>
-                <li><a onclick="switchPage('home')" class="active" id="nav-home">Home</a></li>
-                <li><a onclick="switchPage('products')" id="nav-products">Products</a></li>
-                <li><a onclick="switchPage('tech')" id="nav-tech">Technology & AI</a></li>
-                <li><a onclick="switchPage('recommerce')" id="nav-recommerce">Re-commerce</a></li>
-                <li><a onclick="switchPage('certifications')" id="nav-certifications">Certifications</a></li>
-                <li><a onclick="switchPage('warranty')" id="nav-warranty">Warranty & QR</a></li>
-                <li><a onclick="switchPage('funding')" id="nav-funding">Funding ($150k)</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="webgl-container"></div>
 
-    <div class="container">
-
-        <!-- HOME PAGE -->
-        <section id="page-home" class="page-section active">
-            <div class="hero">
-                <h2>The Ultimate Global Electronics Re-commerce Ecosystem</h2>
-                <p>Operated by <strong>Afandi Technology FZCO</strong> (Dubai), scaling to become the world's largest marketplace for certified refurbished premium technology.</p>
-                <button class="btn" onclick="switchPage('products')">Explore Our Full Device Ecosystem</button>
+    <main class="relative z-10">
+        
+        <header class="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-md border-b border-blue-500/10">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="#" class="text-xl md:text-2xl font-black text-blue-400 tracking-wider flex items-center gap-2">
+                    <span>ResellTech</span>
+                    <span class="text-lg">⚡</span>
+                </a>
+                <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                    <a href="#about" class="hover:text-blue-400 transition-colors">من نحن</a>
+                    <a href="#devices" class="hover:text-blue-400 transition-colors">أجهزتنا المعاد تجديدها</a>
+                    <a href="#warranty" class="hover:text-blue-400 transition-colors">الضمان الحقيقي</a>
+                    <a href="#tradein" class="hover:text-blue-400 transition-colors">نظام الاستبدال (Trade-in)</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors">تواصل معنا</a>
+                </nav>
+                <a href="#tradein" class="bg-blue-500/10 hover:bg-blue-500 text-blue-400 hover:text-black font-semibold px-5 py-2.5 rounded-xl border border-blue-500/35 transition-all">
+                    استبدل جهازك الآن
+                </a>
             </div>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <div class="placeholder-img">[ Warehouse & Stock Preview ]</div>
-                    <h3>Asset-Light Scalability</h3>
-                    <p>Sourced from prime U.S. channels, fully optimized in Dubai, and deployed directly to high-demand retail and enterprise markets.</p>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img">[ AI Platform Preview ]</div>
-                    <h3>AI-Powered Intelligence</h3>
-                    <p>Advanced algorithmic pricing, automated hardware grading, and lightning-fast logistics tracking systems.</p>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img">[ Eco-Warehouse Preview ]</div>
-                    <h3>Green Tech Commitment</h3>
-                    <p>Pioneering eco-friendly warehousing practices and achieving top-tier international environmental standards.</p>
-                </div>
-            </div>
+        </header>
 
-            <!-- Partners & Payment Gateways Bar -->
-            <div class="partners-bar">
-                <p style="color: #64748b; font-weight: 600; font-size: 0.95rem;">Trusted Payment & Logistics Partners</p>
-                <div class="partners-logos">
-                    <div class="partner-tag">Tabby</div>
-                    <div class="partner-tag">Tamara</div>
-                    <div class="partner-tag">Jeebly Logistics</div>
-                    <div class="partner-tag">FedEx Express</div>
+        <section class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+            <span class="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3 bg-blue-950/60 px-4 py-1.5 rounded-full border border-blue-800/50 flex items-center gap-2">
+                <span>إعادة تجديد البيئة الرقمية بذكاء</span>
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mb-6 leading-tight">
+                أجهزة أصلية معاد تجديدها بكفاءة <br>مع <span class="text-blue-400">ضمان حقيقي موثوق</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-8">
+                نقدم لك أفضل أجهزة الكمبيوتر، اللابتوب، والهواتف الذكية المعاد تجديدها بأعلى معايير الجودة العالمية، مع برامج استبدال مرنة وضمان شامل.
+            </p>
+            <div class="flex gap-4">
+                <a href="#devices" class="bg-blue-500 hover:bg-blue-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-500/20">
+                    تصفح المنتجات
+                </a>
+                <a href="#warranty" class="border border-blue-500/30 hover:border-blue-400 text-blue-400 px-8 py-3.5 rounded-xl transition-all flex items-center gap-2">
+                    <span>تفاصيل الضمان الحقيقي</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-blue-400 text-sm font-semibold uppercase tracking-wider">من نحن</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">رادتنا في تجديد التكنولوجيا المستدامة</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        في ResellTech، نؤمن بأن التكنولوجيا المتميزة يجب أن تكون متاحة وموثوقة للجميع. نقوم بفحص واختبار وإعادة تجديد الأجهزة الإلكترونية بعناية فائقة لتضاهي أداء الأجهزة الجديدة تماماً مع توفير اقتصادي كبير.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="glass-card p-4 rounded-2xl">
+                            <span class="block text-3xl font-bold text-blue-400 mb-1">+10K</span>
+                            <span class="text-gray-400 text-sm">جهاز معاد تجديده</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl">
+                            <span class="block text-3xl font-bold text-blue-400 mb-1">100%</span>
+                            <span class="text-gray-400 text-sm">ضمان الجودة والأداء</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-blue-500/20 relative">
+                    <div class="absolute inset-0 bg-blue-500/5 rounded-3xl blur-xl"></div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">رؤيتنا البيئية والاقتصادية</h3>
+                    <p class="text-gray-300 relative z-10 leading-relaxed">
+                        نساهم في تقليل النفايات الإلكترونية من خلال إطالة عمر الأجهزة الذكية وأجهزة الكمبيوتر، مع منح عملائنا راحة البال عبر ضمان حقيقي ودعم فني متواصل.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- PRODUCTS PAGE (Featuring all required categories with lifecycle details) -->
-        <section id="page-products" class="page-section">
-            <h2 class="section-title">The Ultimate Device Marketplace</h2>
-            <p class="section-desc">Full lifecycle transparency for every item: Release date, first activation, age, battery health, display specs, RAM, and storage.</p>
-            
-            <div class="grid-3">
-                <!-- Desktop PC -->
-                <div class="card">
-                    <div class="placeholder-img">[ Desktop PC Image ]</div>
-                    <h3>Enterprise Desktop Tower</h3>
-                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $520 (Like-New)</p>
-                    <div class="device-spec-box">
-                        <strong>Lifecycle & Specs:</strong>
-                        <ul>
-                            <li><span>Release Date:</span> <strong>Q2 2023</strong></li>
-                            <li><span>First Activation:</span> <strong>Nov 2023</strong></li>
-                            <li><span>Device Age:</span> <strong>2 Years 7 Months</strong></li>
-                            <li><span>Component Status:</span> <strong>100% Benchmarked</strong></li>
-                            <li><span>Form Factor:</span> <strong>Tower Workstation</strong></li>
-                            <li><span>Processor:</span> <strong>Intel Core i7 Gen 13</strong></li>
-                            <li><span>RAM Memory:</span> <strong>32GB DDR5</strong></li>
-                            <li><span>Storage Space:</span> <strong>1TB NVMe SSD</strong></li>
-                        </ul>
-                    </div>
+        <section id="devices" class="py-32 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">تشكيلة <span class="text-blue-400">الأجهزة المعاد تجديدها</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">اكتشف مجموعتنا الواسعة من الأجهزة المفحوصة بعناية وبأعلى المواصفات.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-6 rounded-3xl border-blue-500/30">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4 border border-blue-500/20">💻</div>
+                    <h3 class="text-xl font-bold mb-2">أجهزة اللابتوب الاحترافية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">لابتوبات أعمال قوية ومجددة بالكامل تناسب المبرمجين والمصممين ورجال الأعمال بأداء خارق.</p>
                 </div>
 
-                <!-- AiO Computer -->
-                <div class="card">
-                    <div class="placeholder-img">[ AiO Computer Image ]</div>
-                    <h3>All-in-One (AiO) Workstation</h3>
-                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $650 (Like-New)</p>
-                    <div class="device-spec-box">
-                        <strong>Lifecycle & Specs:</strong>
-                        <ul>
-                            <li><span>Release Date:</span> <strong>Q4 2023</strong></li>
-                            <li><span>First Activation:</span> <strong>Feb 2024</strong></li>
-                            <li><span>Device Age:</span> <strong>2 Years 4 Months</strong></li>
-                            <li><span>Screen Size:</span> <strong>27-inch 4K</strong></li>
-                            <li><span>Screen Type:</span> <strong>IPS Retina Display</strong></li>
-                            <li><span>Processor:</span> <strong>Apple M3 / Intel i7</strong></li>
-                            <li><span>RAM Memory:</span> <strong>16GB Unified</strong></li>
-                            <li><span>Storage Space:</span> <strong>512GB SSD</strong></li>
-                        </ul>
-                    </div>
+                <div class="glass-card p-6 rounded-3xl border-blue-500/30">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4 border border-blue-500/20">🖥️</div>
+                    <h3 class="text-xl font-bold mb-2">أجهزة الكمبيوتر المكتبية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">حواسيب مكتبية مجهزة ومختبرة لأقصى درجات الضغط والأداء المستقر للشركات والألعاب.</p>
                 </div>
 
-                <!-- Laptop -->
-                <div class="card">
-                    <div class="placeholder-img">[ Laptop Image ]</div>
-                    <h3>Pro-Grade Laptop</h3>
-                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $450 (Like-New)</p>
-                    <div class="device-spec-box">
-                        <strong>Lifecycle & Specs:</strong>
-                        <ul>
-                            <li><span>Release Date:</span> <strong>Q3 2023</strong></li>
-                            <li><span>First Activation:</span> <strong>Jan 2024</strong></li>
-                            <li><span>Battery Health:</span> <strong>92% (Original)</strong></li>
-                            <li><span>Screen Size:</span> <strong>14-inch</strong></li>
-                            <li><span>Screen Type:</span> <strong>Retina IPS LCD</strong></li>
-                            <li><span>RAM Memory:</span> <strong>16GB</strong></li>
-                            <li><span>Storage Space:</span> <strong>512GB NVMe SSD</strong></li>
-                        </ul>
-                    </div>
+                <div class="glass-card p-6 rounded-3xl border-blue-500/30">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4 border border-blue-500/20">📱</div>
+                    <h3 class="text-xl font-bold mb-2">الهواتف الذكية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">هواتف ذكية معاد تجديدها بحالة ممتازة وبطاريات بحالة مثالية وضمان شامل ضد عيوب الصناعة.</p>
                 </div>
 
-                <!-- Mobile Phone -->
-                <div class="card">
-                    <div class="placeholder-img">[ Smartphone Image ]</div>
-                    <h3>Flagship Smart Device</h3>
-                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $380 (Like-New)</p>
-                    <div class="device-spec-box">
-                        <strong>Lifecycle & Specs:</strong>
-                        <ul>
-                            <li><span>Release Date:</span> <strong>Q4 2023</strong></li>
-                            <li><span>First Activation:</span> <strong>Mar 2024</strong></li>
-                            <li><span>Battery Health:</span> <strong>95% Original</strong></li>
-                            <li><span>Screen Size:</span> <strong>6.1-inch</strong></li>
-                            <li><span>Screen Type:</span> <strong>Super OLED Pro</strong></li>
-                            <li><span>RAM Memory:</span> <strong>8GB</strong></li>
-                            <li><span>Storage Space:</span> <strong>256GB</strong></li>
-                        </ul>
-                    </div>
+                <div class="glass-card p-6 rounded-3xl border-blue-500/30">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4 border border-blue-500/20">📟</div>
+                    <h3 class="text-xl font-bold mb-2">الأجهزة اللوحية (Tablets)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">أجهزة تابلت أصلية ومجددة بدقة لتلبية احتياجات الدراسة، الترفيه، والأعمال المتنقلة.</p>
                 </div>
+            </div>
+        </section>
 
-                <!-- Tablet -->
-                <div class="card">
-                    <div class="placeholder-img">[ Tablet Image ]</div>
-                    <h3>Performance Creator Tablet</h3>
-                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $310 (Like-New)</p>
-                    <div class="device-spec-box">
-                        <strong>Lifecycle & Specs:</strong>
-                        <ul>
-                            <li><span>Release Date:</span> <strong>Q2 2023</strong></li>
-                            <li><span>First Activation:</span> <strong>Aug 2023</strong></li>
-                            <li><span>Battery Health:</span> <strong>89% Original</strong></li>
-                            <li><span>Screen Size:</span> <strong>11-inch</strong></li>
-                            <li><span>Screen Type:</span> <strong>Liquid Retina</strong></li>
-                            <li><span>RAM Memory:</span> <strong>6GB</strong></li>
-                            <li><span>Storage Space:</span> <strong>128GB</strong></li>
-                        </ul>
+        <section id="warranty" class="py-32 px-6 max-w-5xl mx-auto">
+            <div class="glass-card p-8 md:p-14 rounded-3xl border-blue-500/30 relative overflow-hidden text-center">
+                <div class="absolute -top-20 -left-20 w-52 h-52 bg-blue-500/10 rounded-full blur-3xl"></div>
+                
+                <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-3xl mx-auto mb-6 border border-blue-500/30">🛡️</div>
+                
+                <span class="text-blue-400 text-sm font-semibold uppercase tracking-wider">التزامنا المطلق</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">ضمان حقيقي شامل على جميع الأجهزة</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                    نحن لا نبيع أجهزة مستعملة، بل نقدم أجهزة معاد تجديدها باحترافية مدعومة بـ **ضمان حقيقي موثوق** يمنحك راحة البال التامة، مع إمكانية الصيانة أو الاستبدال السريع في حال وجود أي ملاحظة.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-right">
+                    <div class="bg-blue-950/30 p-6 rounded-2xl border border-blue-800/30">
+                        <h4 class="font-bold text-blue-400 mb-2">فحص دقيق 50+ نقطة</h4>
+                        <p class="text-gray-400 text-sm">يخضع كل جهاز لاختبارات صارمة للهاردوير والبطارية والشاشة قبل عرضه للبيع.</p>
                     </div>
-                </div>
-
-                <!-- Audio / Earbuds -->
-                <div class="card">
-                    <div class="placeholder-img">[ Audio / Earbuds Image ]</div>
-                    <h3>Original Certified Audio Gear</h3>
-                    <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem;">Price: $150 (Like-New)</p>
-                    <div class="device-spec-box">
-                        <strong>Lifecycle & Specs:</strong>
-                        <ul>
-                            <li><span>Release Date:</span> <strong>Q1 2024</strong></li>
-                            <li><span>First Activation:</span> <strong>May 2024</strong></li>
-                            <li><span>Battery Health:</span> <strong>98% Retained</strong></li>
-                            <li><span>Driver Type:</span> <strong>Custom High-Excursion</strong></li>
-                            <li><span>Connectivity:</span> <strong>Bluetooth 5.3</strong></li>
-                            <li><span>Acoustics:</span> <strong>Active Noise Cancellation</strong></li>
-                            <li><span>Case Battery:</span> <strong>Full 24h Cycle</strong></li>
-                        </ul>
+                    <div class="bg-blue-950/30 p-6 rounded-2xl border border-blue-800/30">
+                        <h4 class="font-bold text-blue-400 mb-2">فترة ضمان معتمدة</h4>
+                        <p class="text-gray-400 text-sm">ضمان حقيقي يغطي القطع والأداء لضمان استمرارية عمل جهازك بكفاءة عالية.</p>
+                    </div>
+                    <div class="bg-blue-950/30 p-6 rounded-2xl border border-blue-800/30">
+                        <h4 class="font-bold text-blue-400 mb-2">دعم فني متخصص</h4>
+                        <p class="text-gray-400 text-sm"> فريق فني جاهز دائماً لتقديم المساعدة والاستشارات التقنية بعد الشراء.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TECHNOLOGY & AI PAGE -->
-        <section id="page-tech" class="page-section">
-            <h2 class="section-title">Core Technology Stack & AI Integration</h2>
-            <p class="section-desc">How ReloopTech leverages modern software architecture to scale the re-commerce industry.</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <div class="placeholder-img">[ Dynamic Pricing AI ]</div>
-                    <h3>AI Dynamic Pricing Engine</h3>
-                    <p>Machine learning models that analyze U.S. auction histories and regional demand curves to optimize buying and selling prices automatically.</p>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img">[ Computer Vision Grading ]</div>
-                    <h3>Automated Computer Vision Grading</h3>
-                    <p>AI-driven image recognition tools that rapidly scan device conditions upon arrival in Dubai, slashing manual inspection time.</p>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img">[ WMS Architecture ]</div>
-                    <h3>Smart WMS & Omnichannel Hub</h3>
-                    <p>Integrated cloud logistics tracking from auction acquisition to end-user delivery via partners like FedEx and Jeebly.</p>
+        <section id="tradein" class="py-32 px-6 max-w-5xl mx-auto text-center">
+            <div class="glass-card p-10 md:p-16 rounded-3xl border-blue-500/20 relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+                
+                <span class="text-blue-400 text-sm font-semibold uppercase tracking-wider">نظام الاستبدال الذكي</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">خدمة الاستبدال (Trade-in)</h2>
+                <p class="text-gray-400 max-w-lg mx-auto mb-8">هل تمتلك جهازاً قديماً وترغب في التحديث؟ قم باستبداله بسهولة واحصل على خصم بقيمة جهازك القديم عند شراء جهاز جديد أو مجدد.</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#contact" class="bg-blue-500 hover:bg-blue-400 text-black font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-blue-500/20">
+                        قيم جهازك القديم الآن
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- RE-COMMERCE & BUYBACK PAGE -->
-        <section id="page-recommerce" class="page-section">
-            <h2 class="section-title">Re-commerce & BuyBack Program</h2>
-            <p class="section-desc">Our circular ecosystem allows enterprises and retail consumers to seamlessly trade in or recycle tech assets.</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <div class="placeholder-img">[ BuyBack Flow ]</div>
-                    <h3>Instant Trade-In Evaluation</h3>
-                    <p>Users evaluate their devices digitally, generating instant buyback valuations backed by our AI pricing platform.</p>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img">[ B2B Processing ]</div>
-                    <h3>Institutional Asset Recovery</h3>
-                    <p>Managing mass hardware retirement from government bodies and large corporations securely in Dubai.</p>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img">[ Zero E-Waste ]</div>
-                    <h3>Zero E-Waste Mission</h3>
-                    <p>Ensuring every non-reusable component is ethically recycled under strict environmental compliance protocols.</p>
-                </div>
-            </div>
+        <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">جاهز لتحديث أدواتك التقنية؟</h2>
+            <p class="text-gray-400 mb-8">تواصل معنا اليوم واستشر فريقنا لاختيار الجهاز المناسب لاحتياجاتك.</p>
+            <a href="mailto:support@reselltech.com" class="bg-blue-500/10 hover:bg-blue-500 text-blue-400 hover:text-black font-semibold px-8 py-3.5 rounded-xl border border-blue-500/30 transition-all inline-block">
+                راسلنا عبر البريد الإلكتروني
+            </a>
         </section>
 
-        <!-- INTERNATIONAL CERTIFICATIONS PAGE -->
-        <section id="page-certifications" class="page-section">
-            <h2 class="section-title">Global Certifications & Standards</h2>
-            <p class="section-desc">To guarantee top-tier enterprise trust and environmental leadership, Afandi Technology FZCO strictly adheres to recognized international benchmarks.</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <div class="placeholder-img">[ ISO / R2 Badge ]</div>
-                    <h3>Quality & Refurbishment ISO</h3>
-                    <p>Adherence to global standards for testing, grading, data wiping, and hardware restoration processes.</p>
+        <footer class="bg-[#02040a] border-t border-blue-500/10 pt-16 pb-12 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="text-xl font-black text-blue-400 tracking-wider flex items-center gap-2 mb-4">
+                        <span>ResellTech</span>
+                        <span>⚡</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm mb-4 leading-relaxed">
+                        الوجهة الأولى لتجديد وبيع أجهزة الكمبيوتر، اللابتوب، والهواتف مع توفير ضمان حقيقي ونظام استبدال متطور.
+                    </p>
+                    <div class="text-xs text-gray-500 space-y-1 mb-4">
+                        <p>📍 المقر الرئيسي: الخدمات اللوجستية وتقنية الأجهزة</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="placeholder-img">[ Eco-Compliance ]</div>
-                    <h3>Eco-Warehouse Compliance</h3>
-                    <p>Building specialized operations designed to minimize carbon output and electronic waste streams.</p>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">روابط سريعة</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-blue-400 transition-colors">من نحن</a></li>
+                        <li><a href="#devices" class="hover:text-blue-400 transition-colors">الأجهزة المعاد تجديدها</a></li>
+                        <li><a href="#warranty" class="hover:text-blue-400 transition-colors">الضمان الحقيقي</a></li>
+                        <li><a href="#tradein" class="hover:text-blue-400 transition-colors">نظام الاستبدال (Trade-in)</a></li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <div class="placeholder-img">[ Data Security ISO ]</div>
-                    <h3>Secure Data Sanitization</h3>
-                    <p>Military-grade data destruction certificates provided for all corporate and institutional hardware purchases.</p>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">الدعم والمساعدة</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#contact" class="hover:text-blue-400 transition-colors">خدمة العملاء</a></li>
+                        <li><a href="mailto:support@reselltech.com" class="hover:text-blue-400 transition-colors">البريد الإلكتروني</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- DIGITAL WARRANTY & QR PAGE -->
-        <section id="page-warranty" class="page-section">
-            <h2 class="section-title">Digital Warranty & Instant QR Passport</h2>
-            <p class="section-desc">No more manual serial number typing or lost paper receipts.</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <div class="placeholder-img">[ QR Code Scanner Concept ]</div>
-                    <h3>Instant Camera QR Verification</h3>
-                    <p>Every device features a unique laser-etched or digital QR code. Simply scan it with any smartphone camera to instantly retrieve the complete warranty status, lifecycle log, and hardware specifications without typing any serial numbers!</p>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img">[ Blockchain Passport ]</div>
-                    <h3>Secure Digital Passport</h3>
-                    <p>Cloud-backed tamper-proof tracking of repair logs, authenticity checks, and active warranty terms.</p>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img">[ Automated Support ]</div>
-                    <h3>Fast-Track Claims Support</h3>
-                    <p>One-tap ticket creation through the scanned QR profile to guarantee rapid replacement or technical assistance.</p>
+            <div class="max-w-7xl mx-auto pt-8 border-t border-blue-500/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>جميع الحقوق محفوظة © 2026 ResellTech. تكنولوجيا مستدامة وضمان حقيقي</p>
+                <div class="flex gap-6">
+                    <span class="hover:text-blue-400 cursor-pointer">سياسة الخصوصية</span>
+                    <span class="hover:text-blue-400 cursor-pointer">شروط الضمان</span>
                 </div>
             </div>
-        </section>
+        </footer>
+    </main>
 
-        <!-- FUNDING PAGE -->
-        <section id="page-funding" class="page-section">
-            <h2 class="section-title" style="text-align: center;">Extended Seed Funding Round</h2>
-            <p class="section-desc" style="text-align: center;">Strategic capital allocation designed to maximize inventory velocity and scale operations across the MEA region.</p>
-            
-            <div class="funding-card">
-                <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;">Target Investment: $150,000 USD</h3>
-                <p>We are raising capital with a strict structural commitment toward inventory growth and market penetration:</p>
-                <ul class="funding-list">
-                    <li><strong>Inventory Acquisition (≥ 80% / $120,000+):</strong> Dedicated strictly to expanding our procurement pipeline from top U.S. auctions and suppliers to feed high-demand retail and enterprise markets.</li>
-                    <li><strong>Technology & Green Infrastructure (< 20%):</strong> Scaling our platform capabilities, obtaining full international certifications, and optimizing our eco-friendly warehouse in Dubai.</li>
-                </ul>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="mailto:investors@relooptech.com" class="btn">Request Investor Deck</a>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Afandi Technology FZCO (ReloopTech). All Rights Reserved.</p>
-        <p>Dubai, United Arab Emirates | Smarter Tech, Greener Future.</p>
-        <div class="footer-icons">
-            <span title="Global Logistics">🌍</span>
-            <span title="Secure Payments">💳</span>
-            <span title="Eco-Friendly">🌱</span>
-            <span title="AI Powered">🤖</span>
-            <span title="Verified Warranty">🛡️</span>
-        </div>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        function toggleMobileMenu() {
-            const nav = document.getElementById('main-nav');
-            nav.classList.toggle('mobile-open');
+        const container = document.getElementById('webgl-container');
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 8;
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const geom1 = new THREE.BoxGeometry(2.5, 2.5, 2.5);
+        const mat1 = new THREE.MeshStandardMaterial({
+            color: 0x3b82f6,
+            wireframe: true,
+            roughness: 0.2,
+            metalness: 0.9
+        });
+        const mesh1 = new THREE.Mesh(geom1, mat1);
+        group.add(mesh1);
+
+        const geom2 = new THREE.TorusGeometry(3.5, 0.1, 16, 100);
+        const mat2 = new THREE.MeshStandardMaterial({
+            color: 0x60a5fa,
+            wireframe: true,
+            roughness: 0.4,
+            metalness: 0.7,
+            transparent: true,
+            opacity: 0.5
+        });
+        const mesh2 = new THREE.Mesh(geom2, mat2);
+        group.add(mesh2);
+
+        const particlesCount = 200;
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesPositions = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            particlesPositions[i] = (Math.random() - 0.5) * 20;
         }
 
-        function switchPage(pageId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(sec => sec.classList.remove('active'));
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPositions, 3));
+        const particlesMaterial = new THREE.PointsMaterial({
+            color: 0x93c5fd,
+            size: 0.05,
+            transparent: true,
+            opacity: 0.8
+        });
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
 
-            // Remove active class from nav links
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => link.classList.remove('active'));
+        scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+        const pointLight1 = new THREE.PointLight(0x3b82f6, 3);
+        pointLight1.position.set(5, 5, 5);
+        scene.add(pointLight1);
 
-            // Show target section
-            document.getElementById('page-' + pageId).classList.add('active');
-            
-            // Highlight nav link
-            document.getElementById('nav-' + pageId).classList.add('active');
+        const pointLight2 = new THREE.PointLight(0x1d4ed8, 3);
+        pointLight2.position.set(-5, -5, -5);
+        scene.add(pointLight2);
 
-            // Close mobile menu if open
-            const nav = document.getElementById('main-nav');
-            nav.classList.remove('mobile-open');
+        let scrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            scrollY = window.scrollY;
+        });
 
-            // Scroll smoothly to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        let mouseX = 0;
+        let mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX - window.innerWidth / 2) * 0.0005;
+            mouseY = (e.clientY - window.innerHeight / 2) * 0.0005;
+        });
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+
+            mesh1.rotation.x = elapsedTime * 0.2 + scrollY * 0.001 + mouseY;
+            mesh1.rotation.y = elapsedTime * 0.3 + scrollY * 0.0015 + mouseX;
+
+            mesh2.rotation.x = -elapsedTime * 0.15 - scrollY * 0.0008;
+            mesh2.rotation.y = -elapsedTime * 0.25 - scrollY * 0.0012;
+
+            particles.rotation.y = elapsedTime * 0.05;
+
+            renderer.render(scene, camera);
         }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
     </script>
-
 </body>
 </html>
