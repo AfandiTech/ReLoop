@@ -8,8 +8,8 @@
     <style>
         body {
             margin: 0;
-            background-color: #020617;
-            color: #f8fafc;
+            background-color: #09090b;
+            color: #f4f4f5;
             font-family: system-ui, -apple-system, sans-serif;
             overflow-x: hidden;
         }
@@ -23,94 +23,119 @@
             pointer-events: none;
         }
         .neo-glass {
-            background: rgba(15, 23, 42, 0.7);
+            background: rgba(24, 24, 27, 0.75);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(56, 189, 248, 0.15);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
             transition: all 0.4s ease;
         }
         .neo-glass:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.15);
             transform: translateY(-4px);
         }
         .glow-text {
-            text-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+            text-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
         }
     </style>
 </head>
-<body class="selection:bg-cyan-500 selection:text-black">
+<body class="selection:bg-amber-500 selection:text-black">
 
     <div id="webgl-container"></div>
 
     <main class="relative z-10">
         
-        <header class="fixed top-0 left-0 right-0 z-50 bg-[#020617]/80 backdrop-blur-xl border-b border-cyan-500/10">
+        <header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/80 backdrop-blur-xl border-b border-amber-500/10">
             <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
                 <a href="#" class="flex flex-col">
-                    <span class="text-2xl md:text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 glow-text">ResellTech</span>
-                    <span class="text-[10px] text-cyan-300/70 tracking-widest uppercase">Afandi Technology FZCO</span>
+                    <span class="text-2xl md:text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 glow-text">ResellTech</span>
+                    <span class="text-[10px] text-amber-300/70 tracking-widest uppercase">Afandi Technology FZCO</span>
                 </a>
-                <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
-                    <a href="#vision" class="hover:text-cyan-400 transition-colors">Pre-Launch</a>
-                    <a href="#ecosystem" class="hover:text-cyan-400 transition-colors">Ecosystem</a>
-                    <a href="#certifications" class="hover:text-cyan-400 transition-colors">Certifications</a>
-                    <a href="#team" class="hover:text-cyan-400 transition-colors">Founder & Team</a>
-                    <a href="#investment" class="hover:text-cyan-400 transition-colors">Seed Funding</a>
+                <nav class="hidden md:flex gap-8 text-sm font-medium text-zinc-300">
+                    <a href="#showcase" class="hover:text-amber-400 transition-colors">3D Showcase</a>
+                    <a href="#vision" class="hover:text-amber-400 transition-colors">Pre-Launch</a>
+                    <a href="#ecosystem" class="hover:text-amber-400 transition-colors">Ecosystem</a>
+                    <a href="#team" class="hover:text-amber-400 transition-colors">Founder & Team</a>
+                    <a href="#investment" class="hover:text-amber-400 transition-colors">Seed Funding</a>
                 </nav>
-                <a href="#investment" class="bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold px-6 py-3 rounded-2xl transition-all shadow-lg shadow-cyan-500/20">
+                <a href="#investment" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-6 py-3 rounded-2xl transition-all shadow-lg shadow-amber-500/20">
                     Partner With Us
                 </a>
             </div>
         </header>
 
         <section class="h-screen flex flex-col justify-center items-center text-center px-6 pt-24">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full neo-glass border-cyan-500/30 mb-6">
-                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                <span class="text-xs uppercase tracking-widest text-cyan-300">DSO, Dubai, UAE • Pre-Launch Seed Phase</span>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full neo-glass border-amber-500/30 mb-6">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="text-xs uppercase tracking-widest text-amber-300">DSO, Dubai, UAE • Pre-Launch Seed Phase</span>
             </div>
             <h1 class="text-5xl md:text-7xl font-black tracking-tight max-w-5xl mb-6 leading-tight">
-                Reinventing Circular Tech with <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 glow-text">Global Refurbishment Standards</span>
+                Reinventing Circular Tech with <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-400 glow-text">Global Refurbishment Standards</span>
             </h1>
-            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-                Afandi Technology FZCO is scaling operations in Dubai Silicon Oasis, offering an elite <span class="text-cyan-300 font-semibold">30% profit share</span> structure for strategic seed partners.
+            <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+                Afandi Technology FZCO is scaling operations in Dubai Silicon Oasis, offering an elite <span class="text-amber-300 font-semibold">30% profit share</span> structure for strategic seed partners.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#investment" class="bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold px-9 py-4 rounded-2xl transition-all shadow-xl shadow-cyan-500/25">
+                <a href="#investment" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-9 py-4 rounded-2xl transition-all shadow-xl shadow-amber-500/25">
                     Explore Investment Deal
                 </a>
-                <a href="#vision" class="neo-glass hover:border-cyan-400 text-cyan-300 font-bold px-9 py-4 rounded-2xl transition-all">
-                    Discover More
+                <a href="#showcase" class="neo-glass hover:border-amber-400 text-amber-300 font-bold px-9 py-4 rounded-2xl transition-all">
+                    View 3D Showcase
                 </a>
+            </div>
+        </section>
+
+        <section id="showcase" class="py-36 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Interactive Technology</span>
+                <h2 class="text-4xl md:text-6xl font-black mt-3 mb-4">3D Device Motion Showcase</h2>
+                <p class="text-zinc-400 max-w-xl mx-auto">Dynamic visualization of enterprise-grade hardware inspection and rotation cycles.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="neo-glass p-8 rounded-3xl text-center group">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">💻</div>
+                    <h3 class="text-xl font-bold mb-3 text-zinc-100">Core Laptops</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Advanced thermal and component stress simulation testing.</p>
+                </div>
+                <div class="neo-glass p-8 rounded-3xl text-center group">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">📱</div>
+                    <h3 class="text-xl font-bold mb-3 text-zinc-100">Smartphones</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Multi-point optical and display matrix calibration.</p>
+                </div>
+                <div class="neo-glass p-8 rounded-3xl text-center group">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">🖥️</div>
+                    <h3 class="text-xl font-bold mb-3 text-zinc-100">Workstations</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">High-capacity processing units built for enterprise scaling.</p>
+                </div>
             </div>
         </section>
 
         <section id="vision" class="py-36 px-6 max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest">Strategic Base</span>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Strategic Base</span>
                     <h2 class="text-3xl md:text-5xl font-black mt-3 mb-6 leading-tight">Anchored in Dubai Silicon Oasis</h2>
-                    <p class="text-slate-400 text-base md:text-lg leading-relaxed mb-8">
+                    <p class="text-zinc-400 text-base md:text-lg leading-relaxed mb-8">
                         Operating from DSO gives us optimal leverage over international trade routes and technical ecosystems. We specialize in robust device diagnostics, hardware grading, and sustainable asset remarketing.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="neo-glass p-6 rounded-3xl">
-                            <span class="block text-3xl font-black text-cyan-400 mb-1">30%</span>
-                            <span class="text-slate-400 text-xs uppercase tracking-wider">Profit Share</span>
+                            <span class="block text-3xl font-black text-amber-400 mb-1">30%</span>
+                            <span class="text-zinc-400 text-xs uppercase tracking-wider">Profit Share</span>
                         </div>
                         <div class="neo-glass p-6 rounded-3xl">
-                            <span class="block text-3xl font-black text-cyan-400 mb-1">DSO</span>
-                            <span class="text-slate-400 text-xs uppercase tracking-wider">Hub, Dubai</span>
+                            <span class="block text-3xl font-black text-amber-400 mb-1">DSO</span>
+                            <span class="text-zinc-400 text-xs uppercase tracking-wider">Hub, Dubai</span>
                         </div>
                     </div>
                 </div>
-                <div class="neo-glass p-10 rounded-3xl relative overflow-hidden border-cyan-500/30">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-blue-600/10 blur-2xl"></div>
-                    <h3 class="text-2xl font-bold mb-4 relative z-10 text-cyan-300">Pre-Launch Architecture</h3>
-                    <p class="text-slate-300 relative z-10 leading-relaxed mb-6">
+                <div class="neo-glass p-10 rounded-3xl relative overflow-hidden border-amber-500/30">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-orange-600/10 blur-2xl"></div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10 text-amber-300">Pre-Launch Architecture</h3>
+                    <p class="text-zinc-300 relative z-10 leading-relaxed mb-6">
                         We are laying down high-performance frameworks for computers, laptops, mobile phones, and tablets, ensuring pristine quality control before market deployment.
                     </p>
-                    <div class="flex items-center gap-3 text-sm text-cyan-400 font-semibold relative z-10">
+                    <div class="flex items-center gap-3 text-sm text-amber-400 font-semibold relative z-10">
                         <span>⚡ Scalable Infrastructure Ready</span>
                     </div>
                 </div>
@@ -119,78 +144,48 @@
 
         <section id="ecosystem" class="py-36 px-6 max-w-7xl mx-auto">
             <div class="text-center mb-20">
-                <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest">Hardware Portfolios</span>
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Hardware Portfolios</span>
                 <h2 class="text-4xl md:text-6xl font-black mt-3 mb-4">Refurbishment Ecosystem</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">Transforming pre-owned electronics into enterprise-grade assets.</p>
+                <p class="text-zinc-400 max-w-xl mx-auto">Transforming pre-owned electronics into enterprise-grade assets.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="neo-glass p-8 rounded-3xl group">
-                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">💻</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-100">Laptops</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Fully tested notebooks with upgraded components and optimized battery wellness.</p>
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">💻</div>
+                    <h3 class="text-xl font-bold mb-3 text-zinc-100">Laptops</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Fully tested notebooks with upgraded components and optimized battery wellness.</p>
                 </div>
-
                 <div class="neo-glass p-8 rounded-3xl group">
-                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">🖥️</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-100">Desktops</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">High-performance workstations built for absolute reliability and professional workloads.</p>
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">🖥️</div>
+                    <h3 class="text-xl font-bold mb-3 text-zinc-100">Desktops</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">High-performance workstations built for absolute reliability and professional workloads.</p>
                 </div>
-
                 <div class="neo-glass p-8 rounded-3xl group">
-                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">📱</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-100">Mobile Phones</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Pristine smartphones certified through multi-point diagnostic inspection cycles.</p>
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">📱</div>
+                    <h3 class="text-xl font-bold mb-3 text-zinc-100">Mobile Phones</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Pristine smartphones certified through multi-point diagnostic inspection cycles.</p>
                 </div>
-
                 <div class="neo-glass p-8 rounded-3xl group">
-                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">📟</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-100">Tablets</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Versatile touchscreen technology restored to optimal functional standards.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="certifications" class="py-36 px-6 max-w-6xl mx-auto">
-            <div class="neo-glass p-12 md:p-16 rounded-3xl border-cyan-500/30 relative overflow-hidden text-center">
-                <div class="absolute -top-24 -left-24 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"></div>
-                
-                <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest">Quality Assurance</span>
-                <h2 class="text-3xl md:text-5xl font-black mt-3 mb-6">Targeting Global Certifications</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                    We are actively implementing world-class international standards for device grading, data erasure, and sustainable electronics lifecycle management.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-cyan-500/20">
-                        <h4 class="font-bold text-cyan-300 mb-2">ISO Compliance</h4>
-                        <p class="text-slate-400 text-xs">Pursuing rigorous administrative and quality frameworks.</p>
-                    </div>
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-cyan-500/20">
-                        <h4 class="font-bold text-cyan-300 mb-2">Secure Data Wiping</h4>
-                        <p class="text-slate-400 text-xs">Adhering to international safety protocols for digital sanitization.</p>
-                    </div>
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-cyan-500/20">
-                        <h4 class="font-bold text-cyan-300 mb-2">Eco Standards</h4>
-                        <p class="text-slate-400 text-xs">Meeting global electronic waste reduction guidelines.</p>
-                    </div>
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">📟</div>
+                    <h3 class="text-xl font-bold mb-3 text-zinc-100">Tablets</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Versatile touchscreen technology restored to optimal functional standards.</p>
                 </div>
             </div>
         </section>
 
         <section id="team" class="py-36 px-6 max-w-5xl mx-auto text-center">
-            <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest">Leadership</span>
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Leadership</span>
             <h2 class="text-4xl md:text-5xl font-black mt-3 mb-4">Founder & Visionary Team</h2>
-            <p class="text-slate-400 max-w-xl mx-auto mb-16">Driven by strong industry expertise to scale circular technology across the region.</p>
+            <p class="text-zinc-400 max-w-xl mx-auto mb-16">Driven by strong industry expertise to scale circular technology across the region.</p>
 
             <div class="flex justify-center">
-                <div class="neo-glass p-10 rounded-3xl max-w-md w-full border-cyan-500/30 text-center relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent"></div>
-                    <div class="w-24 h-24 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-3xl mx-auto mb-6 group-hover:scale-105 transition-transform">👨‍💻</div>
-                    <h3 class="text-2xl font-bold text-slate-100 mb-1">Mahmoud Ahmed</h3>
-                    <p class="text-cyan-400 text-sm font-semibold mb-6">Founder & CEO</p>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">Leading the strategic vision, setup, and international expansion of Afandi Technology FZCO in Dubai Silicon Oasis.</p>
-                    <a href="https://www.linkedin.com/in/imahmoudsharkawy" target="_blank" class="inline-flex items-center gap-2 bg-cyan-500/10 hover:bg-[#0A66C2] text-cyan-300 hover:text-white border border-cyan-500/30 hover:border-[#0A66C2] px-6 py-3 rounded-xl transition-all text-sm font-semibold">
+                <div class="neo-glass p-10 rounded-3xl max-w-md w-full border-amber-500/30 text-center relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent"></div>
+                    <div class="w-24 h-24 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-3xl mx-auto mb-6 group-hover:scale-105 transition-transform">👨‍💻</div>
+                    <h3 class="text-2xl font-bold text-zinc-100 mb-1">Mahmoud Ahmed</h3>
+                    <p class="text-amber-400 text-sm font-semibold mb-6">Founder & CEO</p>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8">Leading the strategic vision, setup, and international expansion of Afandi Technology FZCO in Dubai Silicon Oasis.</p>
+                    <a href="https://www.linkedin.com/in/imahmoudsharkawy" target="_blank" class="inline-flex items-center gap-2 bg-amber-500/10 hover:bg-[#0A66C2] text-amber-300 hover:text-white border border-amber-500/30 hover:border-[#0A66C2] px-6 py-3 rounded-xl transition-all text-sm font-semibold">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                         Connect with Founder
                     </a>
@@ -199,17 +194,17 @@
         </section>
 
         <section id="investment" class="py-36 px-6 max-w-5xl mx-auto text-center">
-            <div class="neo-glass p-12 md:p-20 rounded-3xl border-cyan-500/40 relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/5 to-indigo-500/10 blur-2xl"></div>
+            <div class="neo-glass p-12 md:p-20 rounded-3xl border-amber-500/40 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-yellow-500/10 blur-2xl"></div>
                 
-                <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest relative z-10">Seed Funding Opportunity</span>
-                <h2 class="text-4xl md:text-6xl font-black mt-3 mb-6 relative z-10">Secure <span class="text-cyan-400">30% Profit Share</span></h2>
-                <p class="text-slate-300 max-w-xl mx-auto mb-10 relative z-10 text-base md:text-lg leading-relaxed">
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest relative z-10">Seed Funding Opportunity</span>
+                <h2 class="text-4xl md:text-6xl font-black mt-3 mb-6 relative z-10">Secure <span class="text-amber-400">30% Profit Share</span></h2>
+                <p class="text-zinc-300 max-w-xl mx-auto mb-10 relative z-10 text-base md:text-lg leading-relaxed">
                     Join our pre-launch journey in Dubai Silicon Oasis as a strategic seed partner and capture massive growth value in sustainable hardware remarketing.
                 </p>
                 
                 <div class="relative z-10 flex flex-wrap justify-center gap-4">
-                    <a href="https://www.linkedin.com/company/afanditechnology-fzco/" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold px-10 py-4 rounded-2xl transition-all shadow-xl shadow-cyan-500/30 flex items-center gap-3">
+                    <a href="https://www.linkedin.com/company/afanditechnology-fzco/" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-10 py-4 rounded-2xl transition-all shadow-xl shadow-amber-500/30 flex items-center gap-3">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                         Corporate LinkedIn Inquiry
                     </a>
@@ -217,16 +212,16 @@
             </div>
         </section>
 
-        <footer class="bg-[#010409] border-t border-cyan-500/10 pt-20 pb-12 px-6">
+        <footer class="bg-[#050507] border-t border-amber-500/10 pt-20 pb-12 px-6">
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                 <div>
-                    <div class="text-xl font-black text-cyan-400 tracking-wider flex items-center gap-2 mb-4">
+                    <div class="text-xl font-black text-amber-400 tracking-wider flex items-center gap-2 mb-4">
                         <span>ResellTech / Afandi Technology FZCO</span>
                     </div>
-                    <p class="text-slate-400 text-sm max-w-sm mb-4 leading-relaxed">
+                    <p class="text-zinc-400 text-sm max-w-sm mb-4 leading-relaxed">
                         Pre-launch stage electronics refurbishment leader engineered for international markets from Dubai Silicon Oasis.
                     </p>
-                    <div class="text-xs text-slate-500 space-y-1">
+                    <div class="text-xs text-zinc-500 space-y-1">
                         <p>📍 Location: DSO, Dubai, UAE</p>
                         <p>💼 Offer: 30% Profit Share Seed Funding</p>
                     </div>
@@ -234,29 +229,29 @@
 
                 <div>
                     <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Quick Navigation</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#vision" class="hover:text-cyan-400 transition-colors">Pre-Launch Vision</a></li>
-                        <li><a href="#ecosystem" class="hover:text-cyan-400 transition-colors">Hardware Ecosystem</a></li>
-                        <li><a href="#certifications" class="hover:text-cyan-400 transition-colors">Global Certifications</a></li>
-                        <li><a href="#team" class="hover:text-cyan-400 transition-colors">Founder & Team</a></li>
-                        <li><a href="#investment" class="hover:text-cyan-400 transition-colors">Seed Investment</a></li>
+                    <ul class="space-y-2 text-sm text-zinc-400">
+                        <li><a href="#showcase" class="hover:text-amber-400 transition-colors">3D Showcase</a></li>
+                        <li><a href="#vision" class="hover:text-amber-400 transition-colors">Pre-Launch Vision</a></li>
+                        <li><a href="#ecosystem" class="hover:text-amber-400 transition-colors">Hardware Ecosystem</a></li>
+                        <li><a href="#team" class="hover:text-amber-400 transition-colors">Founder & Team</a></li>
+                        <li><a href="#investment" class="hover:text-amber-400 transition-colors">Seed Investment</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Official Corporate Network</h4>
-                    <p class="text-sm text-slate-400 mb-4">Connect with our corporate entity directly through LinkedIn.</p>
-                    <a href="https://www.linkedin.com/company/afanditechnology-fzco/" target="_blank" class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all inline-flex" title="Company LinkedIn">
+                    <p class="text-sm text-zinc-400 mb-4">Connect with our corporate entity directly through LinkedIn.</p>
+                    <a href="https://www.linkedin.com/company/afanditechnology-fzco/" target="_blank" class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all inline-flex" title="Company LinkedIn">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                     </a>
                 </div>
             </div>
 
-            <div class="max-w-7xl mx-auto pt-8 border-t border-cyan-500/10 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+            <div class="max-w-7xl mx-auto pt-8 border-t border-amber-500/10 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 gap-4">
                 <p>All rights reserved © 2026 Afandi Technology FZCO (ResellTech). DSO, Dubai, UAE</p>
                 <div class="flex gap-6">
-                    <span class="hover:text-cyan-400 cursor-pointer">Privacy Framework</span>
-                    <span class="hover:text-cyan-400 cursor-pointer">Investment Terms</span>
+                    <span class="hover:text-amber-400 cursor-pointer">Privacy Framework</span>
+                    <span class="hover:text-amber-400 cursor-pointer">Investment Terms</span>
                 </div>
             </div>
         </footer>
@@ -280,7 +275,7 @@
 
         const coreGeom = new THREE.BoxGeometry(2.2, 1.5, 0.2);
         const coreMat = new THREE.MeshStandardMaterial({
-            color: 0x38bdf8,
+            color: 0xf59e0b,
             wireframe: true,
             roughness: 0.1,
             metalness: 0.9
@@ -290,7 +285,7 @@
 
         const outerGeom = new THREE.BoxGeometry(4.5, 3.2, 0.4);
         const outerMat = new THREE.MeshStandardMaterial({
-            color: 0x0284c7,
+            color: 0xd97706,
             wireframe: true,
             roughness: 0.3,
             metalness: 0.8,
@@ -302,7 +297,7 @@
 
         const ringGeom = new THREE.TorusGeometry(5.2, 0.05, 16, 100);
         const ringMat = new THREE.MeshStandardMaterial({
-            color: 0x38bdf8,
+            color: 0xfbbf24,
             roughness: 0.2,
             metalness: 0.8,
             transparent: true,
@@ -322,7 +317,7 @@
 
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPositions, 3));
         const particlesMaterial = new THREE.PointsMaterial({
-            color: 0x7dd3fc,
+            color: 0xfde68a,
             size: 0.06,
             transparent: true,
             opacity: 0.7
@@ -331,7 +326,7 @@
         scene.add(particleField);
 
         scene.add(new THREE.AmbientLight(0xffffff, 0.8));
-        const dirLight = new THREE.PointLight(0x38bdf8, 4);
+        const dirLight = new THREE.PointLight(0xf59e0b, 4);
         dirLight.position.set(6, 6, 6);
         scene.add(dirLight);
 
